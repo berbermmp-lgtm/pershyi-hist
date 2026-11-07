@@ -6,6 +6,24 @@
 <title>ПЕРШИЙ ГІСТЬ — відкриваємо заклади під ключ</title>
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <style>
+@font-face{font-family:'Inter Display';font-style:normal;font-weight:100 900;font-display:swap;
+src:url('assets/fonts/intertight-cyrillic.woff2') format('woff2');
+unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Inter Display';font-style:normal;font-weight:100 900;font-display:swap;
+src:url('assets/fonts/intertight-cyrillic-ext.woff2') format('woff2');
+unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Inter Display';font-style:normal;font-weight:100 900;font-display:swap;
+src:url('assets/fonts/intertight-latin.woff2') format('woff2');
+unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter Display';font-style:normal;font-weight:100 900;font-display:swap;
+src:url('assets/fonts/intertight-latin-ext.woff2') format('woff2');
+unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;
+src:url('assets/fonts/intertight-cyrillic.woff2') format('woff2');
+unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;
+src:url('assets/fonts/intertight-latin.woff2') format('woff2')}
+
 :root{--ink:#12120f;--coal:#1c1c19;--burnt:#f6532f;--cream:#f4efe5;--butter:#e3dfcd;--muted:#b6b4a9;--sep:#424139;--s:clamp(20px,4.6vw,82px);--ease:cubic-bezier(.2,.72,.18,1)}
 *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:var(--ink);color:var(--cream);font:16px/1.5 'Inter Display',Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}body.lock{overflow:hidden}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--burnt);outline-offset:4px}button:disabled{cursor:not-allowed}img{display:block;max-width:100%}::selection{background:var(--burnt);color:var(--ink)}.shell{padding-inline:var(--s);max-width:1720px;margin-inline:auto}.section-label{font-size:11px;letter-spacing:.23em;font-weight:800;text-transform:uppercase}.mono{font-family:'DejaVu Sans Mono','Courier New',monospace}.display{font-family:'Inter Display',Impact,'Arial Black',Arial,sans-serif;font-weight:950;line-height:.88;letter-spacing:-.077em;text-transform:uppercase}.serif{font-family:'Noto Serif Display','Times New Roman',Georgia,serif;font-weight:400;letter-spacing:-.06em}.under{border-bottom:1px solid var(--sep)}.orange{color:var(--burnt)}.btn{display:inline-flex;gap:22px;align-items:center;justify-content:space-between;border:1px solid transparent;min-height:58px;padding:16px 20px 15px 23px;font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;transition:transform .25s var(--ease),background .25s}.btn .arrow{font-size:22px;line-height:1;font-weight:400}.btn:hover{transform:translateY(-3px)}.btn-orange{background:var(--burnt);color:var(--ink)}.btn-orange:hover{background:#ff7353}.btn-ghost{border-color:#8e8778;color:var(--cream);background:transparent}.btn-ghost:hover{background:#24231e}.btn-dark{background:var(--ink);color:var(--cream)}.btn-dark:hover{background:#30302a}
 /* nav */
@@ -46,10 +64,10 @@
 
 /* v2: readable Ukrainian headline on all mobile browsers, including Android Chrome */
 html{overflow-x:clip}
-.display{font-family:Arial,Roboto,"Noto Sans",sans-serif;font-weight:900;letter-spacing:-.048em;line-height:.94}
-.hero h1{font-family:Arial,Roboto,"Noto Sans",sans-serif;letter-spacing:-.045em;line-height:.99;max-width:100%;overflow-wrap:normal}
+.display{font-family:'Inter Display',Inter,Arial,sans-serif;font-weight:900;letter-spacing:-.048em;line-height:.94}
+.hero h1{font-family:'Inter Display',Inter,Arial,sans-serif;letter-spacing:-.045em;line-height:.99;max-width:100%;overflow-wrap:normal}
 .hero h1 .h-outline{
-  font-family:Arial,Roboto,"Noto Sans",sans-serif;
+  font-family:'Inter Display',Inter,Arial,sans-serif;
   -webkit-text-stroke:0;paint-order:normal;color:var(--cream);
   font-size:clamp(25px,3.6vw,58px);font-weight:800;
   letter-spacing:-.025em;line-height:1.15;
@@ -193,7 +211,7 @@ html{overflow-x:clip}
   .projects{padding-top:84px;padding-bottom:84px}
   .manifesto{padding-top:76px;padding-bottom:70px}
   .story-grid{grid-template-columns:1fr;gap:34px}
-  .story-visual{position:relative;top:0;height:min(52vh,420px)}
+  .story-visual{position:sticky;top:78px;height:min(52vh,420px)}
   .story-panel{padding-top:0;padding-bottom:0}
   .story-step{min-height:0;padding-top:26px;padding-bottom:30px;opacity:1}
   .story-step h3{font-size:clamp(34px,4.4vw,52px);margin:12px 0 14px}
@@ -212,7 +230,7 @@ html{overflow-x:clip}
 .story-visual img.is-off{opacity:0;transform:scale(1.04)}
 .story-visual img.change{opacity:.2;transform:scale(1.08)}
 body{overflow-x:clip}
-@media(max-width:1180px){.story-visual{position:relative;top:0;height:min(56vh,430px)}}
+@media(max-width:1180px){.story-visual{position:sticky;top:78px;height:min(56vh,430px)}}
 @media(max-width:720px){.story-visual{position:relative;top:0;height:250px}}
 
 .step-img{display:none}
