@@ -148,6 +148,80 @@ html{overflow-x:clip}
  .hero-rail{margin-top:0}
  .hero-bg:after{background:linear-gradient(90deg,rgba(18,18,15,.96),rgba(18,18,15,.60) 65%,rgba(18,18,15,.25)),linear-gradient(0deg,#12120f,transparent 42%)}
 }
+
+/* ═══ мобільна адаптація (тільки ≤720px) ═══ */
+@media(max-width:720px){
+  html,body{overflow-x:hidden}
+  .mobile-nav{right:0;max-width:100%}
+  :root{--s:18px}
+  .section-label{font-size:12px;letter-spacing:.16em}
+  .story{padding-top:56px;padding-bottom:60px}
+  .food{padding-top:58px;padding-bottom:62px}
+  .services{padding-top:60px;padding-bottom:64px}
+  .budget{padding-top:60px;padding-bottom:62px}
+  .contact{padding-top:58px;padding-bottom:54px}
+  .manifesto{padding-top:52px;padding-bottom:50px}
+  .projects{padding-top:56px;padding-bottom:56px}
+  .story-grid{grid-template-columns:1fr;gap:26px}
+  .story-visual{position:relative;top:0;height:250px;border-radius:2px}
+  .story-corner{font-size:12px;padding:9px 12px;top:12px;left:12px}
+  .story-overlay{font-size:26px;left:16px;bottom:16px;max-width:78%}
+  .story-panel{padding-top:0;padding-bottom:0;display:grid;gap:0}
+  .story-step{min-height:0;padding-top:24px;padding-bottom:26px;opacity:1}
+  .story-step h3{font-size:38px;line-height:.95;margin:12px 0 14px}
+  .story-step p{font-size:16px;line-height:1.5}
+  .story-mini{font-size:12px;margin-top:16px;padding:9px 12px}
+  .food-header{display:block}
+  .food-header p{margin-top:14px;font-size:16px}
+  .food-scroller{margin-top:26px;gap:12px;padding-bottom:16px}
+  .dish{flex:0 0 78vw;aspect-ratio:.82}
+  .dish small{font-size:11.5px;letter-spacing:.1em;bottom:14px;left:14px;right:14px}
+  .food-bottom{margin-top:16px;font-size:13px}
+  .display{letter-spacing:-.05em}
+  h1{font-size:clamp(58px,15.5vw,86px)}
+  p{font-size:16px;line-height:1.55}
+  .btn{font-size:11.5px;padding:12px 16px}
+}
+/* ═══ планшет і «режим ПК» на телефоні (721–1180px) ═══ */
+@media(min-width:721px) and (max-width:1180px){
+  :root{--s:28px}
+  .story{padding-top:80px;padding-bottom:76px}
+  .food{padding-top:76px;padding-bottom:80px}
+  .services{padding-top:80px;padding-bottom:88px}
+  .budget{padding-top:84px;padding-bottom:86px}
+  .contact{padding-top:82px;padding-bottom:78px}
+  .projects{padding-top:84px;padding-bottom:84px}
+  .manifesto{padding-top:76px;padding-bottom:70px}
+  .story-grid{grid-template-columns:1fr;gap:34px}
+  .story-visual{position:relative;top:0;height:min(52vh,420px)}
+  .story-panel{padding-top:0;padding-bottom:0}
+  .story-step{min-height:0;padding-top:26px;padding-bottom:30px;opacity:1}
+  .story-step h3{font-size:clamp(34px,4.4vw,52px);margin:12px 0 14px}
+  .section-label{font-size:12px}
+  .dish{flex:0 0 clamp(230px,32vw,330px)}
+  .food-header{display:block}
+  .food-header p{margin-top:16px;max-width:62ch}
+  .story-mini{font-size:12px}
+  .story-corner{font-size:12px}
+}
+
+/* ── фото етапів: два шари + плавний кросфейд ── */
+.story-visual{position:sticky;top:96px;align-self:start;height:min(74vh,700px);overflow:hidden;background:#292720}
+.story-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .55s var(--ease),transform 1.1s var(--ease);opacity:0;transform:scale(1.04)}
+.story-visual img.is-on{opacity:1;transform:scale(1)}
+.story-visual img.is-off{opacity:0;transform:scale(1.04)}
+.story-visual img.change{opacity:.2;transform:scale(1.08)}
+body{overflow-x:clip}
+@media(max-width:1180px){.story-visual{position:relative;top:0;height:min(56vh,430px)}}
+@media(max-width:720px){.story-visual{position:relative;top:0;height:250px}}
+
+.step-img{display:none}
+@media(max-width:720px){
+  .story-visual{display:none}
+  .step-img{display:block;width:100%;height:190px;object-fit:cover;margin:14px 0 16px}
+  .story-step{padding-top:22px;padding-bottom:24px}
+}
+
 </style>
 </head>
 <body>
@@ -163,7 +237,7 @@ html{overflow-x:clip}
 <div class="marquee" aria-hidden="true"><div class="track"><span>КОНЦЕПЦІЯ</span><span class="star">✳</span><span>ПРОЄКТ</span><span class="star">✳</span><span>КУХНЯ</span><span class="star">✳</span><span>КОМАНДА</span><span class="star">✳</span><span>ПЕРШИЙ ГІСТЬ</span><span class="star">✳</span><span>КОНЦЕПЦІЯ</span><span class="star">✳</span><span>ПРОЄКТ</span><span class="star">✳</span><span>КУХНЯ</span><span class="star">✳</span><span>КОМАНДА</span><span class="star">✳</span><span>ПЕРШИЙ ГІСТЬ</span><span class="star">✳</span></div></div>
 <section class="manifesto shell" id="manifesto"><div class="manifesto-grid"><div class="section-label reveal">01 / Наш підхід</div><div><h2 class="display reveal">НЕ ПРОСТО<br>ВІДКРИТИ.<br><em>ЗАПУСТИТИ<br>БІЗНЕС.</em></h2><p class="intro reveal">Ми працюємо з реальними приміщеннями, бюджетами, постачальниками, людьми та процесами. Щоб після красивого відкриття заклад міг працювати щодня.</p></div></div><div class="numbers reveal"><div class="number"><strong>20+</strong><small>проєктів різних форматів</small></div><div class="number"><strong>2012</strong><small>рік початку досвіду в HoReCa</small></div><div class="number"><strong>1,5–3</strong><small>місяці для частини запусків*</small></div><div class="number"><strong>30</strong><small>днів супроводу після відкриття</small></div></div><p class="story-footer">* Термін залежить від приміщення, масштабу та готовності проєкту.</p></section>
 <section class="projects" id="projects"><div class="shell"><div class="section-title reveal"><div><span class="section-label">02 / Реальні роботи</span><h2 class="display">ЗРОБЛЕНО.<br><span class="orange">НЕ НАМАЛЬОВАНО.</span></h2></div><p class="sub">Різні формати, одна мета: продуманий заклад, готовий приймати гостей.</p></div><div class="case-stage reveal"><div class="case-image"><span class="case-index mono" id="case-index">КЕЙС / 01—04</span><img id="case-picture" src="assets/greystone.webp" alt="Фасад ресторану Grey Stone"></div><div class="case-info"><div><span class="case-id" id="case-category">Ресторан / Софіївська Борщагівка</span><h3 id="case-name">GREY<br>STONE.</h3><p id="case-copy">Ресторанний простір серед проєктів команди: від концепції та обладнання до організації запуску.</p></div><div><div class="case-links"><button class="circle" id="case-prev" type="button" aria-label="Попередній проєкт">←</button><button class="circle" id="case-next" type="button" aria-label="Наступний проєкт">→</button></div></div></div></div><div class="case-list" role="group" aria-label="Обери проєкт"><button class="case-tab active" type="button" data-case="0" aria-pressed="true"><span>01 / РЕСТОРАН</span><b>Grey Stone</b></button><button class="case-tab" type="button" data-case="1" aria-pressed="false"><span>02 / МОЛОДІЖНИЙ</span><b>Eat It</b></button><button class="case-tab" type="button" data-case="2" aria-pressed="false"><span>03 / STREET & PUB</span><b>Red Cat Pub</b></button><button class="case-tab" type="button" data-case="3" aria-pressed="false"><span>04 / READY-TO-EAT</span><b>Готові страви поруч</b></button></div><p class="case-note">Фото надані клієнтом. Дані про точний обсяг робіт і результати кожного кейсу уточнюються перед публікацією.</p></div></section>
-<section class="story shell" id="story"><div class="story-header reveal"><div><div class="section-label">03 / Від креслення до гостя</div><h2 class="display">ВІДКРИТТЯ<br><span class="orange">МАЄ ПРОЦЕС.</span></h2></div><p>Реальні кадри робочих кухонь і готових страв — не абстрактні рендери, а частина ресторанної практики команди.</p></div><div class="story-grid"><div class="story-visual"><img src="assets/kitchen-install.webp" alt="Кухня на етапі встановлення обладнання" id="story-image"><span class="story-corner" id="story-tag">ЕТАП 01 / ПІДГОТОВКА</span><strong class="story-overlay" id="story-overlay">ЩЕ НЕМАЄ ГОСТЕЙ. Є ПЛАН.</strong></div><div class="story-panel"><article class="story-step active" data-story="0"><span class="n mono">/ 01 — СТРАТЕГІЯ</span><h3>СПОЧАТКУ<br>РАХУЄМО.</h3><p>Локація, формат, цільова аудиторія, бізнес-план, кошторис і концепція. Перевіряємо ідею до великих витрат.</p><span class="story-mini">Концепція → Бюджет → План</span></article><article class="story-step" data-story="1"><span class="n mono">/ 02 — СТВОРЕННЯ</span><h3>ПОТІМ<br>БУДУЄМО.</h3><p>Дизайн, контроль підрядників, професійне обладнання, постачальники, автоматизація та документи.</p><span class="story-mini">Проєкт → Оснащення → Процеси</span></article><article class="story-step" data-story="2"><span class="n mono">/ 03 — КУХНЯ</span><h3>ДАЄМО<br>СМАК.</h3><p>Меню, технологічні карти, налаштування кухні, навчання персоналу. Щоб страва була стабільною, а робота — зрозумілою.</p><span class="story-mini">Меню → Техкарти → Команда</span></article><article class="story-step" data-story="3"><span class="n mono">/ 04 — СТАРТ</span><h3>ВІДЧИНЯЄМО<br>ДВЕРІ.</h3><p>Підготовка до відкриття, просування, запуск і супровід протягом першого місяця роботи.</p><span class="story-mini">Відкриття → Підтримка</span></article></div></div><p class="story-footer">Кадри ілюструють різні проєкти та етапи роботи, а не одну послідовність ремонту.</p></section>
+<section class="story shell" id="story"><div class="story-header reveal"><div><div class="section-label">03 / Від креслення до гостя</div><h2 class="display">ВІДКРИТТЯ<br><span class="orange">МАЄ ПРОЦЕС.</span></h2></div><p>Реальні кадри робочих кухонь і готових страв — не абстрактні рендери, а частина ресторанної практики команди.</p></div><div class="story-grid"><div class="story-visual"><img src="assets/kitchen-install.webp" alt="Кухня на етапі встановлення обладнання" id="story-image" class="is-on"><img alt="" aria-hidden="true" id="story-image-b" class="is-off"><span class="story-corner" id="story-tag">ЕТАП 01 / ПІДГОТОВКА</span><strong class="story-overlay" id="story-overlay">ЩЕ НЕМАЄ ГОСТЕЙ. Є ПЛАН.</strong></div><div class="story-panel"><article class="story-step active" data-story="0"><img class="step-img" src="assets/kitchen-install.webp" alt="Кухня на етапі встановлення обладнання" loading="lazy"><span class="n mono">/ 01 — СТРАТЕГІЯ</span><h3>СПОЧАТКУ<br>РАХУЄМО.</h3><p>Локація, формат, цільова аудиторія, бізнес-план, кошторис і концепція. Перевіряємо ідею до великих витрат.</p><span class="story-mini">Концепція → Бюджет → План</span></article><article class="story-step" data-story="1"><img class="step-img" src="assets/kitchen-work.webp" alt="Обладнана робоча кухня" loading="lazy"><span class="n mono">/ 02 — СТВОРЕННЯ</span><h3>ПОТІМ<br>БУДУЄМО.</h3><p>Дизайн, контроль підрядників, професійне обладнання, постачальники, автоматизація та документи.</p><span class="story-mini">Проєкт → Оснащення → Процеси</span></article><article class="story-step" data-story="2"><img class="step-img" src="assets/dish-pasta.webp" alt="Готова паста з креветками" loading="lazy"><span class="n mono">/ 03 — КУХНЯ</span><h3>ДАЄМО<br>СМАК.</h3><p>Меню, технологічні карти, налаштування кухні, навчання персоналу. Щоб страва була стабільною, а робота — зрозумілою.</p><span class="story-mini">Меню → Техкарти → Команда</span></article><article class="story-step" data-story="3"><img class="step-img" src="assets/greystone.webp" alt="Ресторан Grey Stone" loading="lazy"><span class="n mono">/ 04 — СТАРТ</span><h3>ВІДЧИНЯЄМО<br>ДВЕРІ.</h3><p>Підготовка до відкриття, просування, запуск і супровід протягом першого місяця роботи.</p><span class="story-mini">Відкриття → Підтримка</span></article></div></div><p class="story-footer">Кадри ілюструють різні проєкти та етапи роботи, а не одну послідовність ремонту.</p></section>
 <section class="food"><div class="shell"><div class="food-header reveal"><div><div class="section-label">04 / Смак, який працює</div><h2 class="display">ДЕТАЛІ<br>ВИРІШУЮТЬ.</h2></div><p>Формат — від стрітфуду до ресторану. Меню та кухня мають відповідати концепції, обладнанню й економіці закладу.</p></div><div class="food-scroller" id="food-scroller" tabindex="0" aria-label="Галерея страв"><div class="dish"><img loading="lazy" src="assets/dish-pasta.webp" alt="Паста з креветками"><small>Меню / Авторська подача</small></div><div class="dish"><img loading="lazy" src="assets/dish-burger.webp" alt="Бургер із темною булкою"><small>Меню / Street food</small></div><div class="dish"><img loading="lazy" src="assets/dish-shrimp.webp" alt="Креветки в авторській подачі"><small>Меню / Seafood</small></div><div class="dish"><img loading="lazy" src="assets/dish-show.webp" alt="Подача страви із димом"><small>Досвід / Подача</small></div><div class="dish"><img loading="lazy" src="assets/dish-cake.webp" alt="Десерт із ягодами"><small>Меню / Десерти</small></div><div class="dish"><img loading="lazy" src="assets/dish-meat.webp" alt="Гарячий м'ясний сет із ягодами"><small>Меню / Основні страви</small></div></div><div class="food-bottom"><span>Гортай галерею →</span><div class="food-nav"><button id="food-prev" aria-label="Попередні фото" type="button">←</button><button id="food-next" aria-label="Наступні фото" type="button">→</button></div></div></div></section>
 <section class="services shell" id="services"><div class="section-title reveal"><div><div class="section-label">05 / Що беремо на себе</div><h2 class="display">НЕ ТІЛЬКИ<br><span class="orange">ПІД КЛЮЧ.</span></h2></div><p class="sub">Допомагаємо як із повним відкриттям, так і з окремими вузлами ресторанного бізнесу.</p></div><div class="service-list"><div class="service open"><button type="button" class="service-toggle" aria-expanded="true"><span class="id">/ 01</span><span class="name">ЗАКЛАД ІЗ НУЛЯ</span><span class="plus">+</span></button><div class="service-detail"><div><div class="service-in"><p>Від ідеї та аналізу локації до персоналу, техкарт, каси, маркетингу й запуску. Один процес — багато профільних задач.</p><ul><li>Бізнес-план і концепція</li><li>Підбір приміщення</li><li>Дизайн та обладнання</li><li>Меню й технологічні карти</li><li>Підбір персоналу</li><li>Відкриття і супровід</li></ul></div></div></div></div><div class="service"><button type="button" class="service-toggle" aria-expanded="false"><span class="id">/ 02</span><span class="name">ПЕРЕЗАПУСК І РЕБРЕНДИНГ</span><span class="plus">+</span></button><div class="service-detail"><div><div class="service-in"><p>Для чинних закладів, яким потрібен свіжий формат, меню, оптимізація операцій чи оновлення роботи команди.</p><ul><li>Аудит процесів</li><li>Оновлення концепції</li><li>Робота з меню</li><li>Оптимізація кухні</li><li>Навчання персоналу</li><li>План перезапуску</li></ul></div></div></div></div><div class="service"><button type="button" class="service-toggle" aria-expanded="false"><span class="id">/ 03</span><span class="name">ОКРЕМІ ПОСЛУГИ</span><span class="plus">+</span></button><div class="service-detail"><div><div class="service-in"><p>Не обов'язково замовляти повний пакет. Можна залучити команду під конкретну задачу або складний етап.</p><ul><li>Аналіз локації</li><li>Меню, техкарти й калькуляції</li><li>Підбір обладнання</li><li>Постачальники</li><li>Підбір і навчання</li><li>Консультації та аудит</li></ul></div></div></div></div></div></section>
 <section class="founder" id="founder"><div class="shell founder-layout"><div class="founder-copy"><div class="section-label">06 / Люди за процесом</div><h2 class="display">НЕ ТІЛЬКИ<br>ДОСВІД.<br><em>ПРАКТИКА.</em></h2><p><b>Дмитро — бренд-шеф і керівник ресторанних проєктів.</b> У сфері громадського харчування з 2012 року. Має диплом технолога харчової промисловості, закордонну практику й досвід роботи з різними форматами по Україні.</p><p>Разом із командою працює над відкриттям, перезапуском і розвитком закладів. Для нього важливий не тільки день відкриття, а й робота після нього.</p><div class="founder-points"><span>20+ проєктів</span><span>Бренд-шеф</span><span>Ресторанний менеджмент</span></div></div><div class="founder-portrait"><img src="assets/dmytro-cutout.png" alt="Дмитро, бренд-шеф і керівник ресторанних проєктів" loading="lazy"><div class="founder-badge">Обличчя процесу. Від кухні до відкритих дверей.</div></div></div></section>
@@ -176,7 +250,42 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const mobile=$('#mobile-nav'),toggle=$('.menu-toggle'); const closeMenu=()=>{mobile.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';document.body.classList.remove('lock')}; toggle.addEventListener('click',()=>{let open=mobile.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰';document.body.classList.toggle('lock',open)}); $$('#mobile-nav a').forEach(el=>el.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 if('IntersectionObserver'in window){let observer=new IntersectionObserver(ents=>{ents.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.075});$$('.reveal').forEach(el=>observer.observe(el))}else $$('.reveal').forEach(el=>el.classList.add('visible'));
 const cases=[{name:'GREY<br>STONE.',cat:'Ресторан / Софіївська Борщагівка',copy:'Ресторанний простір серед проєктів команди: від концепції та обладнання до організації запуску.',img:'greystone.webp',alt:'Фасад ресторану Grey Stone'},{name:'EAT<br>IT.',cat:'Кафе при житловому комплексі',copy:'Молодіжний формат кафе, в якому важливі зрозуміла кухня, швидкість роботи та впізнаваний характер.',img:'eatit.webp',alt:'Фасад закладу Eat It'},{name:'RED CAT<br>PUB.',cat:'Паб / Харків',copy:'Досвід роботи із закладами мережі Red Cat Brewery та різними форматами громадського харчування.',img:'redcat.webp',alt:'Фасад Red Cat Pub'},{name:'ГОТОВІ<br>СТРАВИ.',cat:'Ready-to-eat / міський формат',copy:'Формат готових домашніх і корисних страв, побудований навколо щоденного попиту та зручності.',img:'ready-food.webp',alt:'Вивіска Готові страви поруч'}];let caseIndex=0;function setCase(n){caseIndex=(n+cases.length)%cases.length;let c=cases[caseIndex],im=$('#case-picture');im.classList.add('swap');let pre=new Image();pre.src='assets/'+c.img;const apply=()=>{im.src=pre.src;im.alt=c.alt;$('#case-name').innerHTML=c.name;$('#case-category').textContent=c.cat;$('#case-copy').textContent=c.copy;$('#case-index').textContent='КЕЙС / '+String(caseIndex+1).padStart(2,'0')+'—04';$$('.case-tab').forEach((b,i)=>{b.classList.toggle('active',i===caseIndex);b.setAttribute('aria-pressed',String(i===caseIndex))});im.classList.remove('swap')};pre.complete?apply():pre.onload=apply}$$('.case-tab').forEach(b=>b.addEventListener('click',()=>setCase(+b.dataset.case)));$('#case-prev').addEventListener('click',()=>setCase(caseIndex-1));$('#case-next').addEventListener('click',()=>setCase(caseIndex+1));
-const stages=[{img:'kitchen-install.webp',tag:'ЕТАП 01 / ПІДГОТОВКА',txt:'ЩЕ НЕМАЄ ГОСТЕЙ. Є ПЛАН.',alt:'Кухня на етапі встановлення обладнання'},{img:'kitchen-work.webp',tag:'ЕТАП 02 / НАЛАШТУВАННЯ',txt:'ПРОСТІР СТАЄ КУХНЕЮ.',alt:'Обладнана робоча кухня'},{img:'dish-pasta.webp',tag:'ЕТАП 03 / МЕНЮ',txt:'КОЖНА СТРАВА — РІШЕННЯ.',alt:'Готова паста з креветками'},{img:'greystone.webp',tag:'ЕТАП 04 / ВІДКРИТТЯ',txt:'ДВЕРІ ВІДЧИНЕНО.',alt:'Ресторан Grey Stone'}];let storyIndex=0;function setStory(n){if(n===storyIndex)return;storyIndex=n;const s=stages[n],im=$('#story-image');im.classList.add('change');let pre=new Image();pre.src='assets/'+s.img;const apply=()=>{im.src=pre.src;im.alt=s.alt;$('#story-tag').textContent=s.tag;$('#story-overlay').textContent=s.txt;im.classList.remove('change')};pre.complete?apply():pre.onload=apply;$$('.story-step').forEach((el,i)=>el.classList.toggle('active',i===n))}if('IntersectionObserver'in window){let stageObserver=new IntersectionObserver(es=>{let visible=es.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible)setStory(+visible.target.dataset.story)},{threshold:[.2,.45,.7],rootMargin:'-12% 0px -18% 0px'});$$('.story-step').forEach(el=>stageObserver.observe(el))}else $$('.story-step').forEach(el=>el.addEventListener('mouseenter',()=>setStory(+el.dataset.story)));
+const stages=[{img:'kitchen-install.webp',tag:'ЕТАП 01 / ПІДГОТОВКА',txt:'ЩЕ НЕМАЄ ГОСТЕЙ. Є ПЛАН.',alt:'Кухня на етапі встановлення обладнання'},{img:'kitchen-work.webp',tag:'ЕТАП 02 / НАЛАШТУВАННЯ',txt:'ПРОСТІР СТАЄ КУХНЕЮ.',alt:'Обладнана робоча кухня'},{img:'dish-pasta.webp',tag:'ЕТАП 03 / МЕНЮ',txt:'КОЖНА СТРАВА — РІШЕННЯ.',alt:'Готова паста з креветками'},{img:'greystone.webp',tag:'ЕТАП 04 / ВІДКРИТТЯ',txt:'ДВЕРІ ВІДЧИНЕНО.',alt:'Ресторан Grey Stone'}];let storyIndex=0,storyBusy=false;
+const storyImgs=[$('#story-image'),$('#story-image-b')];
+const preloaded={};
+stages.forEach(s=>{const im=new Image();im.src='assets/'+s.img;preloaded[s.img]=im;});
+function paintStory(n){
+  const s=stages[n], top=storyImgs[0].classList.contains('is-on')?0:1, bottom=1-top;
+  const incoming=storyImgs[bottom], outgoing=storyImgs[top];
+  incoming.src=preloaded[s.img].src;
+  incoming.alt=s.alt;
+  requestAnimationFrame(()=>{
+    incoming.classList.remove('is-off'); incoming.classList.add('is-on');
+    outgoing.classList.remove('is-on'); outgoing.classList.add('is-off');
+  });
+  $('#story-tag').textContent=s.tag;
+  $('#story-overlay').textContent=s.txt;
+}
+function setStory(n,force){
+  n=Math.max(0,Math.min(stages.length-1,n));
+  if(n===storyIndex&&!force)return;
+  storyIndex=n;
+  paintStory(n);
+  $$('.story-step').forEach((el,i)=>el.classList.toggle('active',i===n));
+}
+function syncStory(){
+  const steps=$$('.story-step'); if(!steps.length)return;
+  const mid=innerHeight*0.52; let best=0,bestDist=1e9;
+  steps.forEach((el,i)=>{
+    const r=el.getBoundingClientRect();
+    const d=Math.abs((r.top+r.bottom)/2-mid);
+    if(d<bestDist){bestDist=d;best=i;}
+  });
+  setStory(best);
+}
+addEventListener('scroll',syncStory,{passive:true});
+addEventListener('resize',syncStory);
+syncStory(true);
 $$('.service-toggle').forEach(b=>b.addEventListener('click',()=>{let item=b.closest('.service'),open=!item.classList.contains('open');$$('.service').forEach(el=>{el.classList.remove('open');el.querySelector('.service-toggle').setAttribute('aria-expanded','false')});if(open){item.classList.add('open');b.setAttribute('aria-expanded','true')}}));
 const scroller=$('#food-scroller');$('#food-prev').addEventListener('click',()=>scroller.scrollBy({left:-scroller.clientWidth*.76,behavior:'smooth'}));$('#food-next').addEventListener('click',()=>scroller.scrollBy({left:scroller.clientWidth*.76,behavior:'smooth'}));
 const fees=['$2 800','$3 300','$3 600','$4 800'],invests=['$10 000–18 000','$15 000–25 000','$20 000–40 000','$35 000–65 000'];$$('.area-btn').forEach(b=>b.addEventListener('click',()=>{let i=+b.dataset.area;$$('.area-btn').forEach(el=>el.setAttribute('aria-pressed',String(el===b)));$('#fee-value').textContent=fees[i];$('#invest-value').textContent=invests[i]}));
