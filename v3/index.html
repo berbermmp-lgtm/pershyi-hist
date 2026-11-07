@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#fbfaf8" />
+<meta name="description" content="Перший Гість — студія запуску закладів під ключ по всій Україні. Від ідеї та бізнес-плану до першого гостя." />
+<title>Перший Гість — від ідеї до першого гостя</title>
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('assets/fonts/intertight-cyrillic.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('assets/fonts/intertight-cyrillic-ext.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('assets/fonts/intertight-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('assets/fonts/intertight-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{--ink:#161717;--white:#fff;--paper:#fbfaf8;--milk:#f1efeb;--line:#e5e2dc;--muted:#666967;--accent:#ff5634;--accent2:#eb4e2c;--radius:22px;--ease:cubic-bezier(.2,.8,.2,1);--max:1510px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,'Arial',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}body.menu-open{overflow:hidden}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}img{display:block;max-width:100%}::selection{background:#ffb2a2;color:#111}.container{width:min(var(--max),calc(100% - 68px));margin-inline:auto}.kicker{font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}.kicker:before{content:'';display:block;width:19px;height:2px;background:var(--accent)}.display{font-weight:900;letter-spacing:-.07em;line-height:.98}.mono{font-family:ui-monospace,'DejaVu Sans Mono',monospace}.muted{color:var(--muted)}.accent{color:var(--accent)}.title-xl{font-weight:900;font-size:clamp(50px,7.2vw,116px);letter-spacing:-.075em;line-height:.93;margin:0}.body-lg{font-size:clamp(16px,1.3vw,20px);line-height:1.55}.btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:52px;padding:14px 19px;border:1px solid transparent;border-radius:14px;font-size:13px;font-weight:800;transition:transform .25s var(--ease),background .25s,color .25s;white-space:nowrap}.btn:hover{transform:translateY(-3px)}.btn .arr{font-size:22px;font-weight:400;line-height:1}.btn-orange{color:white;background:var(--accent)}.btn-orange:hover{background:var(--accent2)}.btn-black{background:var(--ink);color:white}.btn-outline{color:var(--ink);border-color:#bfc1c1;background:var(--white)}.btn-outline:hover{background:#e9e8e5}.btn-light{background:#fff;color:#101010}.arrow-circ{border:1px solid #b7b8b4;border-radius:50%;height:44px;width:44px;display:grid;place-items:center;font-size:23px;background:white;transition:background .2s,transform .2s}.arrow-circ:hover{background:#f7dad2;transform:translateY(-2px)}
+/* navigation */
+.site-header{height:84px;background:rgba(251,250,248,.95);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:70;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.head-inner{display:flex;align-items:center;justify-content:space-between;height:100%;gap:22px}.logo{display:flex;align-items:center;gap:12px;min-width:0}.logo-mark{width:42px;height:47px;flex:none}.logo-text{font-weight:900;line-height:.88;font-size:21px;letter-spacing:-.065em}.logo-text span{display:block}.logo-text small{display:block;letter-spacing:.09em;font-size:8px;margin-top:9px;color:#636561;font-weight:750;line-height:1.3}.desktop-nav{display:flex;align-items:center;gap:clamp(14px,1.7vw,29px);margin-left:auto}.desktop-nav a{font-size:12px;font-weight:750;white-space:nowrap;transition:color .2s}.desktop-nav a:hover{color:var(--accent)}.header-cta{margin-left:10px}.menu-button{border:1px solid var(--line);background:white;border-radius:12px;width:48px;height:48px;display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px}.menu-button span{width:21px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s}.menu-button[aria-expanded=true] span:first-child{transform:translateY(3.5px) rotate(45deg)}.menu-button[aria-expanded=true] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}.mobile-menu{display:none;position:fixed;top:84px;left:0;right:0;bottom:0;background:var(--paper);z-index:65;padding:30px 26px 35px;overflow:auto;box-shadow:0 20px 30px #0002}.mobile-menu.open{display:flex;flex-direction:column;gap:0}.mobile-menu a:not(.btn){font-size:clamp(28px,7vw,43px);font-weight:850;letter-spacing:-.06em;padding:13px 0;border-bottom:1px solid var(--line)}.mobile-menu .btn{margin-top:28px}
+/* hero */
+.hero{position:relative;margin:17px 17px 0;background:#141515;color:white;min-height:clamp(625px,calc(100svh - 116px),820px);border-radius:24px;overflow:hidden;isolation:isolate}.hero-photo{position:absolute;inset:0 0 0 40%;z-index:-2;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 31%);mask-image:linear-gradient(90deg,transparent 0%,#000 31%)}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.025);animation:photoArrive 1.6s ease-out both}.hero:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#141515 0%,#141515 28%,rgba(20,21,21,.91) 38%,rgba(20,21,21,.55) 55%,rgba(20,21,21,.03) 93%),linear-gradient(0deg,rgba(13,14,14,.72) 0%,transparent 42%);pointer-events:none}.hero-inner{width:min(var(--max),calc(100% - 94px));margin:auto;min-height:inherit;display:flex;flex-direction:column;justify-content:space-between;position:relative;padding-top:48px;padding-bottom:34px}.hero-topline{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#e9e7e2}.hero-pulse{height:9px;width:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(255,86,52,.18)}.hero-main{margin-top:auto;margin-bottom:auto;padding:40px 0 28px;max-width:940px}.hero h1{font-weight:950;letter-spacing:-.085em;line-height:.83;font-size:clamp(86px,11vw,181px);margin:0 0 20px;text-transform:uppercase;max-width:100%;overflow-wrap:normal}.hero h1 span{display:block}.hero h1 .hot{color:var(--accent)}.hero-subline{display:flex;align-items:center;gap:17px}.hero-subline .stripe{height:4px;width:58px;background:var(--accent);border-radius:3px}.hero-subline p{font-size:clamp(20px,2.2vw,31px);margin:4px 0 0;font-weight:750;letter-spacing:-.035em}.hero-description{font-size:clamp(16px,1.3vw,19px);color:#e5e5e2;max-width:480px;line-height:1.55;margin:25px 0 23px}.hero-actions{display:flex;flex-wrap:wrap;gap:11px}.hero-bottom{border-top:1px solid #ffffff52;padding-top:22px;display:flex;align-items:end;justify-content:space-between;gap:30px}.hero-stats{display:flex;gap:12px;flex-wrap:wrap}.stat-pill{display:flex;align-items:center;gap:12px;background:white;color:var(--ink);border-radius:14px;padding:12px 15px;min-height:52px}.stat-pill strong{font-size:21px;line-height:1;letter-spacing:-.07em}.stat-pill small{font-size:11px;line-height:1.2;color:#535353}.hero-note{font-size:11px;text-align:right;letter-spacing:.07em;text-transform:uppercase;font-weight:750;line-height:1.6;color:#ecebe6}.round-stamp{width:106px;height:106px;border:1.5px solid rgba(255,255,255,.85);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:absolute;top:19%;right:7%;transform:rotate(11deg);text-align:center;background:#14151580;backdrop-filter:blur(2px);pointer-events:none}.round-stamp small{font-weight:900;font-size:10px;line-height:1.1}.round-stamp b{font-size:36px;line-height:1.1}
+/* intro ticker */
+.ticker{padding:15px 0;overflow:hidden;border-bottom:1px solid var(--line);background:#fff;white-space:nowrap}.ticker-track{display:flex;align-items:center;width:max-content;gap:25px;animation:move 38s linear infinite}.ticker-track b{font-size:clamp(17px,2.2vw,31px);font-weight:880;letter-spacing:-.055em}.ticker-track i{font-style:normal;color:var(--accent);font-size:22px}.section-pad{padding-top:125px;padding-bottom:125px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:50px}.section-heading h2{font-size:clamp(45px,6.3vw,92px);line-height:.96;font-weight:900;letter-spacing:-.07em;margin:15px 0 0}.section-heading p{color:#666;line-height:1.58;max-width:375px;margin:0 0 5px;font-size:15px}
+/* founder */
+.founder{background:var(--paper)}.founder-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(45px,7vw,110px);align-items:center}.founder-visual{background:linear-gradient(145deg,#f1ece5,#e5e2dc);position:relative;min-height:575px;border-radius:24px;overflow:hidden;display:flex;align-items:end;justify-content:center;isolation:isolate}.founder-visual:before{content:'';position:absolute;z-index:-1;top:9%;left:15%;width:70%;aspect-ratio:1;border:50px solid var(--accent);border-radius:50%;opacity:.93}.founder-visual img{width:auto;height:99%;max-width:none;object-fit:contain;object-position:bottom;filter:drop-shadow(0 13px 11px #16171719)}.founder-visual .founder-seal{position:absolute;top:22px;left:22px;padding:10px 14px;border:1px solid #30322e38;border-radius:100px;background:#ffffffe6;font-size:11px;font-weight:850;letter-spacing:.06em;text-transform:uppercase}.founder-visual .founder-name-tag{position:absolute;bottom:20px;right:22px;background:#171818;color:white;border-radius:14px;padding:13px 18px;font-size:11px;line-height:1.7;text-transform:uppercase;letter-spacing:.13em}.founder-copy h2{font-size:clamp(48px,6.1vw,90px);font-weight:900;letter-spacing:-.075em;line-height:.94;margin:18px 0 25px}.founder-copy .lead{font-size:clamp(17px,1.55vw,23px);font-weight:600;line-height:1.45;max-width:560px}.founder-copy .text{color:#696c69;line-height:1.75;max-width:555px;font-size:15px}.founder-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:33px 0 34px}.fact{border-top:1px solid #c5c8c1;padding-top:17px}.fact b{display:block;font-size:clamp(25px,3vw,40px);letter-spacing:-.06em}.fact span{display:block;margin-top:5px;font-size:12px;line-height:1.45;color:#6b6c68}
+/* feature cards */
+.feature-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}.feature-card{min-height:420px;border-radius:23px;position:relative;overflow:hidden;color:white;background:#222}.feature-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .9s var(--ease)}.feature-card:hover img{transform:scale(1.065)}.feature-card:before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent 75%);z-index:1}.feature-card .card-inner{position:absolute;z-index:2;inset:auto 26px 25px;display:flex;align-items:end;justify-content:space-between;gap:18px}.feature-card .card-inner small{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.feature-card .card-inner h3{font-size:clamp(26px,3vw,45px);letter-spacing:-.055em;line-height:1.08;margin:9px 0 0}.feature-card .card-arrow{background:white;color:#111;border-radius:50%;height:45px;width:45px;display:grid;place-items:center;font-size:24px;flex:none}
+/* projects */
+.projects{background:#f0efeb}.projects-head .sub-count{border:1px solid #c4c5c0;border-radius:50px;padding:12px 18px;white-space:nowrap;font-size:13px;font-weight:800}.project-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:17px}.project-card{grid-column:span 6;border-radius:22px;overflow:hidden;background:white;display:block;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}.project-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px #1c20170d}.project-img{height:clamp(310px,31vw,450px);background:#272624;overflow:hidden;position:relative}.project-img img{height:100%;width:100%;object-fit:cover;transition:transform .9s var(--ease)}.project-card:hover img{transform:scale(1.045)}.project-img .project-tag{position:absolute;top:20px;left:20px;background:white;color:#111;border-radius:40px;padding:9px 14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.project-meta{padding:26px 28px 29px;display:flex;justify-content:space-between;gap:20px;align-items:center}.project-meta h3{font-size:clamp(25px,3vw,42px);font-weight:900;margin:0 0 7px;letter-spacing:-.07em}.project-meta p{color:#6a6b68;margin:0;font-size:14px}.project-meta .project-ico{width:46px;height:46px;border:1px solid #d4d6d1;border-radius:50%;display:grid;place-items:center;font-size:24px;flex:none}.project-card.wide{grid-column:span 7}.project-card.narrow{grid-column:span 5}.project-card.wide .project-img,.project-card.narrow .project-img{height:360px}.project-detail{margin-top:24px;background:white;border-radius:18px;padding:25px 30px;display:flex;justify-content:space-between;gap:16px;align-items:center}.project-detail p{max-width:850px;margin:0;color:#616561;font-size:14px;line-height:1.7}
+/* services */
+.services-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw}.services-intro h2{font-size:clamp(52px,6.5vw,99px);line-height:.9;margin:16px 0 27px;font-weight:900;letter-spacing:-.08em}.services-intro p{color:#727370;max-width:390px;line-height:1.7}.services-list{border-top:1px solid #c7c8c4}.service{border-bottom:1px solid #c7c8c4}.service button{display:grid;grid-template-columns:49px 1fr 35px;align-items:center;gap:12px;width:100%;border:0;background:none;padding:26px 0;text-align:left}.service b{font-size:clamp(21px,2.1vw,29px);letter-spacing:-.035em;line-height:1.15}.service .num{font-size:12px;color:var(--accent);font-weight:850}.service .plus{width:33px;height:33px;background:#edecea;border-radius:50%;display:grid;place-items:center;font-size:24px;transition:transform .25s}.service button[aria-expanded=true] .plus{transform:rotate(45deg);background:#ffd9cf}.service .answer{display:none;padding:0 47px 26px 61px;color:#696a67;font-size:15px;line-height:1.65}.service .answer.open{display:block}
+/* journey */
+.journey{background:#171818;color:#fff}.journey .section-heading p{color:#bfc1bf}.journey-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:46px;align-items:stretch}.journey-steps{display:flex;flex-direction:column;gap:10px}.journey-step{border:1px solid #515351;border-radius:18px;padding:22px 23px;background:#222323;color:white;text-align:left;display:grid;grid-template-columns:52px 1fr 20px;gap:10px;align-items:center;transition:background .25s,border-color .25s}.journey-step.active{border-color:var(--accent);background:#34241f}.journey-step .step-num{font-size:13px;color:var(--accent);font-weight:900}.journey-step h3{font-size:clamp(20px,2.1vw,29px);letter-spacing:-.04em;margin:0 0 5px}.journey-step p{color:#b7b6b2;margin:0;font-size:13px;line-height:1.5}.journey-visual{border-radius:22px;min-height:500px;position:relative;overflow:hidden;background:#353535}.journey-visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:opacity .24s ease,transform .7s ease}.journey-visual img.fade{opacity:.3;transform:scale(1.04)}.journey-caption{position:absolute;inset:auto 20px 20px;background:rgba(255,255,255,.95);color:var(--ink);border-radius:15px;padding:17px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:530px}.journey-caption span{font-weight:850;font-size:14px}.journey-caption small{color:#70736f;font-size:11px}
+/* food */
+.food-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:31px}.food-head h2{font-size:clamp(45px,6vw,90px);margin:16px 0 0;letter-spacing:-.075em;line-height:.94}.food-controls{display:flex;gap:9px}.food-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:8px}.food-track::-webkit-scrollbar{display:none}.food-slide{flex:0 0 clamp(240px,28vw,430px);height:clamp(320px,39vw,500px);overflow:hidden;scroll-snap-align:start;border-radius:21px;position:relative;background:#dedbd5}.food-slide img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.food-slide:hover img{transform:scale(1.05)}.food-slide .food-index{position:absolute;top:16px;left:17px;background:#fff;border-radius:40px;padding:7px 11px;font-size:12px;font-weight:900}
+/* budget */
+.budget{background:#f0efeb}.budget-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.budget-title h2{font-size:clamp(52px,7vw,101px);letter-spacing:-.08em;line-height:.92;margin:16px 0 24px}.budget-title p{color:#686b66;line-height:1.65;max-width:400px}.budget-panel{background:#fff;border-radius:23px;padding:36px}.budget-panel h3{font-size:14px;font-weight:850;letter-spacing:.03em;margin:0 0 22px}.area-options{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.area-btn{min-height:90px;border:1px solid #dfe0de;border-radius:13px;background:#f8f8f6;padding:10px;text-align:left;transition:background .2s,color .2s,border-color .2s}.area-btn strong{font-size:clamp(12px,1.15vw,17px);display:block;white-space:nowrap}.area-btn small{display:block;margin-top:8px;font-size:10px;color:#787b77}.area-btn[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}.area-btn[aria-pressed=true] small{color:#cbc9c7}.prices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0}.price{border-radius:16px;background:#f1efeb;padding:25px 22px}.price.primary{background:#ffe2da}.price label{font-size:12px;line-height:1.4;color:#585956;display:block}.price strong{display:block;font-size:clamp(29px,3.4vw,49px);letter-spacing:-.075em;white-space:nowrap;line-height:1.2;margin-top:14px}.budget-foot{font-size:12px;color:#747672;line-height:1.6;margin:0 0 22px}
+/* last */
+.contact{padding-top:100px;padding-bottom:110px}.contact-card{border-radius:24px;background:#191a1a;overflow:hidden;color:#fff;display:grid;grid-template-columns:1fr 1fr;min-height:590px}.contact-info{padding:clamp(31px,5vw,75px);position:relative;display:flex;flex-direction:column;align-items:start;justify-content:space-between;gap:50px;isolation:isolate}.contact-info:after{content:'';position:absolute;width:330px;height:330px;border:69px solid var(--accent);border-radius:50%;right:-165px;bottom:-220px;z-index:-1}.contact-info h2{font-size:clamp(55px,7vw,114px);line-height:.92;letter-spacing:-.075em;font-weight:900;margin:25px 0}.contact-info p{color:#bfc1be;line-height:1.65;max-width:360px}.contact-form{padding:clamp(30px,4.5vw,68px);background:#faf9f7;color:var(--ink)}.contact-form h3{font-size:30px;letter-spacing:-.055em;margin:0 0 25px}.contact-form label{display:block;font-size:12px;font-weight:800;margin:17px 0 8px}.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:14px 17px;border:1px solid #d9dad7;border-radius:12px;background:white;color:var(--ink);outline:none;min-height:51px}.contact-form textarea{min-height:99px;resize:vertical}.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--accent)}.form-note{font-size:11px;color:#747772;line-height:1.6}.form-result{border:1px solid #e6b5a7;background:#fff1ed;border-radius:12px;padding:17px;margin-top:17px;display:none}.form-result.show{display:block}.form-result pre{white-space:pre-wrap;font-size:12px;line-height:1.6;font-family:inherit}.form-actions{display:flex;gap:10px;flex-wrap:wrap}.copy-btn{font-size:12px;border:1px solid #bfbeba;border-radius:9px;background:white;padding:11px 13px;font-weight:750}.footer{border-top:1px solid var(--line);padding:29px 0 36px;background:var(--paper)}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}.footer-inner span,.footer-inner a{color:#61645f;font-size:12px}.footer-inner a:hover{color:var(--accent)}.footer .foot-links{display:flex;gap:20px;flex-wrap:wrap}.reveal{opacity:1;transform:none}.reveal.visible{animation:gentleEnter .55s var(--ease) both}@keyframes gentleEnter{from{opacity:.82;transform:translateY(9px)}to{opacity:1;transform:none}}
+@keyframes move{to{transform:translateX(-50%)}}@keyframes photoArrive{from{opacity:.4;transform:scale(1.09)}to{opacity:1;transform:scale(1.025)}}
+@media (max-width:1250px){.container{width:calc(100% - 48px)}.hero-inner{width:calc(100% - 66px)}.desktop-nav{gap:14px}.desktop-nav a{font-size:11px}.header-cta{padding:12px 15px}.hero h1{font-size:clamp(78px,10.5vw,137px)}.budget-layout{gap:25px}}
+@media (max-width:1040px){.desktop-nav,.header-cta{display:none}.menu-button{display:flex}.hero h1{font-size:clamp(77px,11vw,120px)}.hero-photo{inset:0 0 0 33%}.hero:after{background:linear-gradient(90deg,#141515 0%,rgba(20,21,21,.93) 29%,rgba(20,21,21,.22) 94%),linear-gradient(0deg,#141515 0%,transparent 40%)}.founder-grid{gap:32px}.founder-visual{min-height:500px}.budget-layout{grid-template-columns:1fr;gap:28px}.budget-title h2{max-width:850px}.journey-grid{gap:18px}.contact-card{grid-template-columns:1fr 1fr}}
+@media (max-width:740px){.container{width:calc(100% - 34px)}.site-header{height:72px}.mobile-menu{top:72px}.logo-mark{height:40px;width:38px}.logo-text{font-size:19px}.logo-text small{font-size:7px}.hero{margin:10px 10px 0;border-radius:18px;min-height:clamp(700px,calc(100svh - 83px),850px)}.hero-photo{inset:0;opacity:.8;-webkit-mask-image:none;mask-image:none}.hero-photo img{object-position:45% 38%}.hero:after{background:linear-gradient(90deg,rgba(13,15,15,.85) 0%,rgba(13,15,15,.35) 100%),linear-gradient(0deg,#111 0%,rgba(16,16,16,.38) 54%,rgba(16,16,16,.25) 100%)}.hero-inner{width:calc(100% - 38px);padding-top:25px;padding-bottom:21px}.hero-topline{font-size:9px;letter-spacing:.1em}.hero-main{padding:39px 0 23px}.hero h1{font-size:clamp(66px,13.75vw,109px);margin-bottom:17px}.hero-subline p{font-size:20px}.hero-subline .stripe{width:25px;flex:none}.hero-description{font-size:15px;max-width:460px;margin:24px 0 19px}.hero-actions{gap:9px}.hero-actions .btn{font-size:11px;padding:11px 12px;min-height:46px;gap:7px}.round-stamp{width:74px;height:74px;right:7%;top:18%;opacity:.9}.round-stamp b{font-size:25px}.round-stamp small{font-size:7px}.hero-bottom{flex-wrap:wrap;gap:14px;padding-top:16px}.stat-pill{padding:9px 10px;min-height:46px;gap:6px}.stat-pill strong{font-size:17px}.stat-pill small{font-size:9px}.hero-note{display:none}.section-pad{padding-top:76px;padding-bottom:76px}.section-heading{display:block;margin-bottom:32px}.section-heading p{margin:19px 0 0}.founder-grid,.services-layout,.journey-grid,.contact-card{grid-template-columns:1fr}.founder-visual{min-height:480px;order:1}.founder-copy{order:2}.founder-facts{margin:27px 0}.feature-grid{grid-template-columns:1fr}.feature-card{min-height:365px}.project-card,.project-card.wide,.project-card.narrow{grid-column:span 12}.project-img,.project-card.wide .project-img,.project-card.narrow .project-img{height:clamp(290px,65vw,440px)}.projects .project-detail{display:block;padding:21px}.services-layout{gap:35px}.journey-visual{min-height:410px}.journey-step{padding:18px}.budget-panel{padding:24px}.contact{padding-top:67px;padding-bottom:70px}.contact-card{min-height:unset}.contact-info{min-height:350px;padding:33px}.contact-form{padding:30px}.food-slide{flex-basis:70vw;height:95vw;max-height:470px}.section-heading h2{font-size:clamp(47px,10vw,79px)}.ticker{padding:12px 0}.ticker-track b{font-size:22px}}
+@media (max-width:420px){.hero{min-height:clamp(660px,calc(100svh - 83px),800px)}.hero h1{font-size:clamp(55px,13.4vw,80px)}.hero-subline p{font-size:18px}.hero-main{padding-top:45px}.hero-stats{gap:6px}.stat-pill{border-radius:10px;padding:8px}.stat-pill strong{font-size:16px}.stat-pill small{font-size:9px}.round-stamp{top:16%;right:4%;width:65px;height:65px}.founder-visual{min-height:385px}.founder-visual:before{border-width:31px}.founder-name-tag{display:none}.founder-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.fact b{font-size:24px}.fact span{font-size:10px}.area-options{grid-template-columns:repeat(2,1fr)}.area-btn{min-height:74px}.prices{grid-template-columns:1fr}.contact-info h2{font-size:55px}.feature-card{min-height:340px}.project-meta{padding:20px}.project-meta h3{font-size:26px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* v2: cleaner mobile editorial art direction + overlap/desktop-mode fixes */
+/* The symbol is a real inline SVG: arch / door / handle are independent paths. */
+.logo-mark .logo-door,.logo-mark .logo-handle{transform-box:fill-box;transform-origin:left center;transition:transform .48s cubic-bezier(.18,.8,.2,1)}
+.logo:hover .logo-door,.logo:focus-visible .logo-door{transform:translateX(2px) skewY(-7deg)}
+.logo:hover .logo-handle,.logo:focus-visible .logo-handle{transform:translateX(2px) skewY(-7deg)}
+/* Replace the enormous orange ring; it previously escaped its own column and covered inputs. */
+.contact-info:after{content:none!important;display:none!important}
+.contact-info:before{content:'';position:absolute;top:0;right:0;width:6px;height:100%;background:linear-gradient(180deg,var(--accent),transparent 78%);pointer-events:none;opacity:.8}
+.contact-info>*{position:relative;z-index:1}
+.contact-card{position:relative;isolation:isolate}
+.contact-form{position:relative;z-index:2}
+.contact-info h2{overflow-wrap:normal}
+.founder-visual:before{border-width:27px;opacity:.85;max-width:360px;left:50%;transform:translateX(-50%)}
+/* Keeps the content well proportioned in Chrome's 'desktop site' portrait viewport (~980px). */
+@media (max-width:1100px){
+ .contact-card{grid-template-columns:minmax(0,1fr)}
+ .contact-info{min-height:300px;gap:28px;padding:clamp(30px,5vw,55px)}
+ .contact-info h2{font-size:clamp(52px,7.4vw,90px);margin:18px 0}
+ .contact-form{padding:clamp(28px,5vw,52px)}
+ .founder-visual{min-height:440px}
+}
+@media (min-width:861px) and (max-width:1100px){
+ .contact-card{grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr)}
+ .contact-info{padding:28px;gap:18px;min-height:0}
+ .contact-info h2{font-size:clamp(45px,5.1vw,64px);margin:16px 0}
+ .contact-info p{font-size:14px}
+ .contact-form{padding:28px}
+}
+@media (max-width:740px){
+ html{scroll-padding-top:77px}
+ .container{width:calc(100% - 32px)}
+ .site-header{height:72px}
+ .head-inner{gap:12px}
+ .hero{margin:8px 8px 0;border-radius:17px;min-height:clamp(640px,calc(100svh - 81px),740px)}
+ .hero-photo{inset:0;opacity:1}
+ .hero-photo img{object-position:54% 32%}
+ .hero:after{background:linear-gradient(0deg,rgba(13,14,14,.96) 0%,rgba(13,14,14,.64) 45%,rgba(13,14,14,.22) 93%),linear-gradient(90deg,rgba(13,14,14,.4),transparent 95%)}
+ .hero-inner{width:calc(100% - 36px);padding-top:23px;padding-bottom:19px}
+ .hero-main{padding:30px 0 26px;max-width:100%}
+ .hero h1{font-size:clamp(56px,14vw,87px);line-height:.88;letter-spacing:-.072em;margin-bottom:19px}
+ .hero-subline p{font-size:clamp(17px,4.3vw,21px);line-height:1.22}
+ .hero-subline{gap:11px}
+ .hero-subline .stripe{width:25px}
+ .hero-description{max-width:390px;font-size:15px;margin:20px 0 22px;line-height:1.53}
+ .hero-actions{gap:8px}
+ .hero-actions .btn{min-height:49px;padding:11px 12px;gap:7px;font-size:11px}
+ .round-stamp{width:67px;height:67px;top:16%;right:6%;opacity:.94}
+ .round-stamp b{font-size:25px}
+ .hero-bottom{padding-top:13px}
+ .hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:7px}
+ .stat-pill{padding:10px 9px;min-height:57px;border-radius:10px;display:flex;flex-direction:column;align-items:start;justify-content:center;gap:4px}
+ .stat-pill strong{font-size:21px}
+ .stat-pill small{font-size:10px;line-height:1.13}
+ .section-pad{padding-top:64px;padding-bottom:64px}
+ .section-heading h2{font-size:clamp(43px,10vw,76px)}
+ .founder-grid{gap:24px}
+ .founder-visual{order:1;height:355px;min-height:0;border-radius:17px}
+ .founder-visual img{height:100%;width:auto;max-width:96%;object-fit:contain;object-position:center bottom}
+ .founder-visual:before{top:12%;left:50%;width:260px;max-width:68%;border-width:19px;opacity:.9}
+ .founder-visual .founder-seal{top:13px;left:13px;font-size:9px;padding:9px 11px}
+ .founder-visual .founder-name-tag{bottom:12px;right:12px;font-size:9px;padding:9px 11px}
+ .founder-copy{order:2}
+ .founder-copy h2{font-size:clamp(45px,9.4vw,68px);margin:12px 0 17px}
+ .founder-copy .lead{font-size:18px}
+ .founder-copy .text{font-size:14px}
+ .founder-facts{margin:25px 0;gap:8px}
+ .fact b{font-size:clamp(23px,6vw,35px)}
+ .fact span{font-size:11px}
+ .feature-grid{gap:12px}
+ .feature-card{min-height:290px;border-radius:16px}
+ .project-img,.project-card.wide .project-img,.project-card.narrow .project-img{height:clamp(225px,58vw,320px)}
+ .project-card{border-radius:16px}
+ .journey-visual{min-height:320px}
+ .budget-panel{padding:19px;border-radius:17px}
+ .contact{padding-top:55px;padding-bottom:65px}
+ .contact-card{border-radius:18px}
+ .contact-info{padding:28px 24px;min-height:0;gap:26px}
+ .contact-info h2{font-size:clamp(46px,11.5vw,69px);margin:16px 0;line-height:.93}
+ .contact-info p{font-size:14px;line-height:1.5;max-width:350px;margin:0}
+ .contact-form{padding:26px 24px}
+ .contact-form h3{font-size:clamp(25px,6.3vw,32px);line-height:1.14;margin:0 0 15px}
+ .contact-form label{margin:15px 0 7px}
+ .contact-form input,.contact-form select,.contact-form textarea{min-height:49px}
+ .contact-info .mono{font-size:10px!important}
+ .footer-inner{gap:14px}
+}
+@media (max-width:420px){
+ .hero{min-height:clamp(615px,calc(100svh - 81px),715px)}
+ .hero h1{font-size:clamp(52px,13.75vw,67px)}
+ .hero-topline{font-size:8.5px}
+ .round-stamp{top:15%;right:6%;width:63px;height:63px}
+ .hero-actions .btn{min-height:47px;font-size:10px}
+ .founder-visual{height:325px;min-height:0}
+ .founder-visual .founder-name-tag{display:block}
+ .founder-visual:before{border-width:16px}
+ .founder-facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .fact span{font-size:10px}
+ .contact-info h2{font-size:clamp(44px,11.7vw,55px)}
+ .contact-form{padding:23px 18px}
+ .contact-info{padding:26px 20px}
+ .area-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:360px){
+ .logo-text{font-size:17px}.logo-text small{font-size:6.4px}
+ .hero h1{font-size:clamp(46px,13.3vw,53px)}
+ .hero-actions{display:grid;grid-template-columns:1fr 1fr}
+ .hero-actions .btn{font-size:9px;min-width:0;gap:4px;padding-inline:7px}
+ .hero-actions .arr{font-size:13px}
+ .stat-pill strong{font-size:18px}.stat-pill small{font-size:9px}
+ .contact-info h2{font-size:42px}
+}
+@media (prefers-reduced-motion:reduce){.logo-mark .logo-door,.logo-mark .logo-handle{transition:none!important;transform:none!important}}
+
+
+/* v3: wider editorial portrait, with real transparent cutout and no giant orange ring */
+.founder{position:relative;background:#fbfaf8}
+.founder-grid{grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);gap:clamp(24px,3.6vw,62px);align-items:center}
+.founder-visual{height:clamp(530px,47vw,700px);min-height:0;background:radial-gradient(ellipse at 53% 31%,#41413a 0%,#262925 42%,#171b19 100%);border-radius:26px;box-shadow:0 16px 42px #2a211b18;overflow:hidden;isolation:isolate}
+.founder-visual:before{content:'';position:absolute;z-index:0;left:auto;top:0;right:0;width:21%;height:100%;border:0;transform:none;border-radius:0;background:linear-gradient(164deg,#ff6743 0%,#e9492b 82%);clip-path:polygon(100% 0,100% 100%,10% 100%,90% 0);opacity:1;max-width:none}
+.founder-visual:after{content:'';position:absolute;z-index:0;top:10%;left:6%;width:55%;height:30%;border-top:1px solid #fffffa24;border-left:1px solid #fffffa24;border-radius:15px 0 0 0;pointer-events:none}
+.founder-visual img{position:absolute;z-index:1;left:50%;bottom:0;transform:translateX(-50%);width:100%;height:100%;max-width:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 14px 16px #0005)}
+.founder-visual .founder-seal{z-index:3;color:#171818;border:0;background:#fdf8eefe}
+.founder-visual .founder-name-tag{z-index:3;right:17px;bottom:17px;background:#151717f2;border:1px solid #ffffff35;box-shadow:0 8px 20px #0002}
+.founder-copy{min-width:0}
+.founder-copy h2{font-size:clamp(42px,5.35vw,78px);line-height:.99;letter-spacing:-.071em;margin:18px 0 22px}
+.founder-copy .lead{font-size:clamp(17px,1.42vw,21px)}
+.founder-copy .text{line-height:1.67}
+.founder-facts{gap:10px;margin:25px 0 26px}
+@media (min-width:741px) and (max-width:1100px){
+ .founder-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(20px,2.4vw,28px)}
+ .founder-visual{height:clamp(485px,57vw,610px);min-height:0}
+ .founder-copy h2{font-size:clamp(39px,5.1vw,58px);line-height:.99}
+ .founder-copy .lead{font-size:clamp(15px,1.7vw,19px)}
+ .founder-copy .text{font-size:14px;line-height:1.58}
+ .founder-facts{margin:20px 0;gap:9px}
+ .fact b{font-size:clamp(24px,2.9vw,36px)}
+ .fact span{font-size:11px;line-height:1.35}
+}
+@media (max-width:740px){
+ .founder-grid{grid-template-columns:1fr;gap:26px}
+ .founder-visual{order:1;width:100%;height:clamp(385px,104vw,480px);min-height:0;border-radius:20px}
+ .founder-visual:before{top:0;right:0;left:auto;transform:none;width:23%;height:100%;border:0;max-width:none}
+ .founder-visual:after{top:9%;left:7%;width:53%;height:24%}
+ .founder-visual img{height:100%;width:100%;max-width:100%;object-fit:contain;object-position:center bottom}
+ .founder-copy{order:2}
+ .founder-copy h2{font-size:clamp(43px,10.2vw,68px);line-height:.96;margin:12px 0 18px}
+ .founder-visual .founder-seal{left:14px;top:14px}
+ .founder-visual .founder-name-tag{display:block;right:11px;bottom:11px;padding:8px 10px;font-size:9px}
+}
+@media (max-width:420px){
+ .founder-visual{height:clamp(360px,101vw,424px);min-height:0}
+ .founder-visual:before{top:0;right:0;left:auto;transform:none;border:0;width:24%;max-width:none}
+ .founder-copy h2{font-size:clamp(42px,10.6vw,53px)}
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+ <div class="container head-inner">
+  <a href="#home" class="logo" aria-label="Перший Гість — головна">
+   <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 49" fill="none" aria-hidden="true"><path class="logo-arch" fill="#ff5634" d="M4 45V17C4 7.5 12 1 22 1S40 7.5 40 17v28h-9V17c0-5.2-4-8.6-9-8.6S13 11.8 13 17v28H4Z"/><path class="logo-door" d="M19 43V23c0-3 2.5-5.5 5.5-5.5H30V43H19Z" fill="#171818"/><path class="logo-handle" d="M20.5 25h8" stroke="#fff" stroke-width="2"/></svg>
+   <span class="logo-text"><span>ПЕРШИЙ</span><span>ГІСТЬ</span><small>СТУДІЯ ЗАПУСКУ ЗАКЛАДІВ</small></span>
+  </a>
+  <nav class="desktop-nav" aria-label="Головна навігація"><a href="#about">Про нас</a><a href="#projects">Проєкти</a><a href="#services">Послуги</a><a href="#journey">Як працюємо</a><a href="#budget">Бюджет</a></nav>
+  <a class="btn btn-orange header-cta" href="#contact">Обговорити запуск <span class="arr">↗</span></a>
+  <button class="menu-button" id="menuToggle" aria-label="Відкрити меню" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span></button>
+ </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Мобільна навігація">
+ <a href="#home">Головна</a><a href="#about">Про нас</a><a href="#projects">Проєкти</a><a href="#services">Послуги</a><a href="#journey">Як працюємо</a><a href="#budget">Бюджет</a><a class="btn btn-orange" href="#contact">Обговорити запуск ↗</a>
+</nav>
+<main id="home">
+<section class="hero" aria-labelledby="hero-title">
+ <div class="hero-photo"><img src="assets/hero.webp" alt="Фасад відкритого ресторану Grey Stone ввечері" fetchpriority="high" decoding="async" /></div>
+ <div class="hero-inner">
+  <div class="hero-topline"><span class="hero-pulse"></span> РЕСТОРАННИЙ БІЗНЕС ПІД КЛЮЧ · УКРАЇНА</div>
+  <div class="hero-main">
+   <h1 id="hero-title"><span>ПЕРШИЙ</span><span class="hot">ГІСТЬ.</span></h1>
+   <div class="hero-subline"><i class="stripe"></i><p>Від ідеї до першого гостя.</p></div>
+   <p class="hero-description">Створюємо заклади з нуля та оновлюємо діючі. Концепція, бізнес-план, кухня, команда й запуск — в одних руках.</p>
+   <div class="hero-actions"><a href="#contact" class="btn btn-orange">Відкрити свій заклад <span class="arr">↗</span></a><a class="btn btn-light" href="#projects">Дивитись проєкти <span class="arr">↗</span></a></div>
+  </div>
+  <div class="round-stamp" aria-hidden="true"><small>ВІД ІДЕЇ</small><b>01</b><small>ДО ЗАПУСКУ</small></div>
+  <div class="hero-bottom"><div class="hero-stats"><div class="stat-pill"><strong>20+</strong><small>закладів<br>у досвіді команди</small></div><div class="stat-pill"><strong>2012</strong><small>рік початку<br>роботи у сфері</small></div><div class="stat-pill"><strong>UA</strong><small>проєкти по<br>всій Україні</small></div></div><div class="hero-note">ІДЕЯ / РЕАЛІЗАЦІЯ / ЗАПУСК<br>ПЕРШИЙ ГІСТЬ — НЕ ОСТАННІЙ</div></div>
+ </div>
+</section>
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><b>КОНЦЕПЦІЯ</b><i>✳</i><b>ПРОЄКТУВАННЯ</b><i>✳</i><b>КОМАНДА</b><i>✳</i><b>ПЕРШИЙ ГІСТЬ</b><i>✳</i><b>КОНЦЕПЦІЯ</b><i>✳</i><b>ПРОЄКТУВАННЯ</b><i>✳</i><b>КОМАНДА</b><i>✳</i><b>ПЕРШИЙ ГІСТЬ</b><i>✳</i></div></div>
+<section class="founder section-pad" id="about"><div class="container founder-grid">
+ <div class="founder-visual reveal"><img src="assets/chef-bust.png" alt="Дмитро — бренд-шеф та керівник ресторанних проєктів" loading="lazy" decoding="async"><div class="founder-seal">Досвід, який працює</div><div class="founder-name-tag">ДМИТРО<br>БРЕНД-ШЕФ / КЕРІВНИК</div></div>
+ <div class="founder-copy reveal"><span class="kicker">Людина за проєктами</span><h2>ІДЕЯ Є.<br><span class="accent">РЕАЛІЗАЦІЯ</span><br>ЗА НАМИ.</h2><p class="lead">За кожним закладом стоять сотні рішень. Ми знаємо, як провести їх від першого розрахунку до відкритих дверей.</p><p class="text">Дмитро — бренд-шеф, технолог харчової промисловості та керівник діючого ресторану. У сфері гостинності з 2012 року, має досвід запуску, перезапуску та розвитку різних форматів закладів в Україні й за кордоном.</p>
+ <div class="founder-facts"><div class="fact"><b>20+</b><span>закладів різних форматів</span></div><div class="fact"><b>14</b><span>років у сфері станом на 2026 рік</span></div><div class="fact"><b>1 міс.</b><span>супроводу після запуску</span></div></div><a class="btn btn-black" href="#services">Що ми беремо на себе <span class="arr">↗</span></a></div>
+</div></section>
+<section class="container" aria-label="Наші компетенції"><div class="feature-grid">
+ <a class="feature-card reveal" href="#journey"><img src="assets/kitchen_new.webp" alt="Обладнання нової кухні на етапі підготовки до відкриття" loading="lazy"><div class="card-inner"><div><small>01 / процес</small><h3>Від порожньої кухні<br>до запуску</h3></div><span class="card-arrow" aria-hidden="true">↗</span></div></a>
+ <a class="feature-card reveal" href="#food"><img src="assets/pasta.webp" alt="Авторська паста з креветками" loading="lazy"><div class="card-inner"><div><small>02 / меню</small><h3>Страви, за якими<br>повертаються</h3></div><span class="card-arrow" aria-hidden="true">↗</span></div></a>
+</div></section>
+<section class="projects section-pad" id="projects"><div class="container">
+ <div class="section-heading projects-head reveal"><div><span class="kicker">Реальні роботи</span><h2>НЕ НА СЛОВАХ.<br><span class="accent">НА ПРАКТИЦІ.</span></h2></div><div class="sub-count">20+ закладів у досвіді</div></div>
+ <div class="project-grid">
+  <article class="project-card reveal"><div class="project-img"><img src="assets/hero.webp" loading="lazy" alt="Ресторан Grey Stone, вечірній фасад"><span class="project-tag">Ресторан · Софіївська Борщагівка</span></div><div class="project-meta"><div><h3>GREY STONE</h3><p>Повноформатний ресторан</p></div><span class="project-ico">↗</span></div></article>
+  <article class="project-card reveal"><div class="project-img"><img src="assets/eat.webp" loading="lazy" alt="Фасад кафе Eat It"><span class="project-tag">Кафе · молодіжний формат</span></div><div class="project-meta"><div><h3>EAT IT</h3><p>Заклад при житловому комплексі</p></div><span class="project-ico">↗</span></div></article>
+  <article class="project-card wide reveal"><div class="project-img"><img src="assets/redcat.webp" loading="lazy" alt="Відкритий заклад Red Cat Pub з командою"><span class="project-tag">Паби · Харків</span></div><div class="project-meta"><div><h3>RED CAT PUB</h3><p>Робота з ресторанними та пабними форматами</p></div><span class="project-ico">↗</span></div></article>
+  <article class="project-card narrow reveal"><div class="project-img"><img src="assets/ready.webp" loading="lazy" alt="Вивіска закладу Готові страви поруч"><span class="project-tag">Готові страви</span></div><div class="project-meta"><div><h3>ГОТОВІ СТРАВИ ПОРУЧ</h3><p>Формат домашніх готових страв</p></div><span class="project-ico">↗</span></div></article>
+ </div>
+ <div class="project-detail"><p>У портфоліо — приклади закладів, про які розповів Дмитро. Конкретний обсяг робіт, строки й результати кожного кейсу уточнюються перед публікацією остаточної версії.</p><a class="btn btn-outline" href="#contact">Обговорити свій формат <span class="arr">↗</span></a></div>
+</div></section>
+<section class="services section-pad" id="services"><div class="container services-layout">
+ <div class="services-intro reveal"><span class="kicker">Наші послуги</span><h2>НЕ ЛИШЕ<br>ВІДКРИТИ.<br><span class="accent">ЗАПУСТИТИ.</span></h2><p>Беремо на себе весь шлях — від аналізу приміщення до першого робочого дня. Або підключаємося на окремому етапі, де потрібен досвід команди.</p><a href="#contact" class="btn btn-black">Обрати формат співпраці <span class="arr">↗</span></a></div>
+ <div class="services-list reveal" id="serviceAccordion">
+  <div class="service"><button aria-expanded="true" aria-controls="service0"><span class="num">01</span><b>Запуск закладу під ключ</b><span class="plus">+</span></button><div class="answer open" id="service0">Бізнес-план, аналіз локації та аудиторії, концепція, дизайн, підрядники, обладнання, постачальники, меню, документи, персонал, автоматизація, відкриття.</div></div>
+  <div class="service"><button aria-expanded="false" aria-controls="service1"><span class="num">02</span><b>Перезапуск та ребрендинг</b><span class="plus">+</span></button><div class="answer" id="service1">Аудит чинного закладу, оновлення концепції та меню, оптимізація процесів, підготовка до повторного запуску.</div></div>
+  <div class="service"><button aria-expanded="false" aria-controls="service2"><span class="num">03</span><b>Меню, техкарти, кухня</b><span class="plus">+</span></button><div class="answer" id="service2">Розробка та оновлення меню, технологічних карт, планування кухонних зон і добір обладнання під конкретний формат.</div></div>
+  <div class="service"><button aria-expanded="false" aria-controls="service3"><span class="num">04</span><b>Навчання персоналу</b><span class="plus">+</span></button><div class="answer" id="service3">Добір команди, запуск робочих стандартів, навчання працівників та супровід у перший місяць після відкриття.</div></div>
+  <div class="service"><button aria-expanded="false" aria-controls="service4"><span class="num">05</span><b>Аудит та консультації</b><span class="plus">+</span></button><div class="answer" id="service4">Розбираємо фінансову модель, локацію, асортимент або операційну проблему й пропонуємо конкретні рішення.</div></div>
+ </div>
+</div></section>
+<section class="journey section-pad" id="journey"><div class="container"><div class="section-heading reveal"><div><span class="kicker">Від задуму до гостей</span><h2>ШЛЯХ<br><span class="accent">ДО ВІДКРИТТЯ.</span></h2></div><p>Не просто красивий ресторан на фото. Показуємо, що стоїть за його запуском. Обери етап — побачиш реальний кадр із роботи.</p></div>
+ <div class="journey-grid"><div class="journey-steps reveal">
+  <button type="button" class="journey-step active" data-step="0" aria-pressed="true"><span class="step-num">01</span><div><h3>Ідея та прорахунок</h3><p>Формат, локація, аудиторія, фінансова модель</p></div><span>↗</span></button>
+  <button type="button" class="journey-step" data-step="1" aria-pressed="false"><span class="step-num">02</span><div><h3>Планування й оснащення</h3><p>Кухня, обладнання, постачальники, ремонт</p></div><span>↗</span></button>
+  <button type="button" class="journey-step" data-step="2" aria-pressed="false"><span class="step-num">03</span><div><h3>Команда та меню</h3><p>Страви, техкарти, навчання та стандарти</p></div><span>↗</span></button>
+  <button type="button" class="journey-step" data-step="3" aria-pressed="false"><span class="step-num">04</span><div><h3>Відкриття й супровід</h3><p>Запуск, контроль процесів, перший місяць підтримки</p></div><span>↗</span></button>
+ </div><div class="journey-visual reveal"><img id="journeyImage" src="assets/hero.webp" loading="lazy" alt="Приклад готового ресторану"><div class="journey-caption"><span id="journeyTitle">Кожен запуск починається з чіткої ідеї</span><small id="journeyIndex">01 / 04</small></div></div></div>
+</div></section>
+<section class="food section-pad" id="food"><div class="container"><div class="food-head reveal"><div><span class="kicker">Страви й подача</span><h2>СМАК, ЯКИЙ<br><span class="accent">МАЄ ІДЕЮ.</span></h2></div><div class="food-controls"><button class="arrow-circ" id="foodPrev" aria-label="Попереднє фото">←</button><button class="arrow-circ" id="foodNext" aria-label="Наступне фото">→</button></div></div>
+ <div class="food-track" id="foodTrack"><div class="food-slide"><img src="assets/pasta.webp" alt="Паста з морепродуктами" loading="lazy"><span class="food-index">01 / 06</span></div><div class="food-slide"><img src="assets/shrimp.webp" alt="Креветки в авторській подачі" loading="lazy"><span class="food-index">02 / 06</span></div><div class="food-slide"><img src="assets/dish.webp" alt="Авторська основна страва" loading="lazy"><span class="food-index">03 / 06</span></div><div class="food-slide"><img src="assets/burger.webp" alt="Бургер у темній булці" loading="lazy"><span class="food-index">04 / 06</span></div><div class="food-slide"><img src="assets/berry.webp" alt="Десерт із ягодами" loading="lazy"><span class="food-index">05 / 06</span></div><div class="food-slide"><img src="assets/plated.webp" alt="Креативна подача авторської страви" loading="lazy"><span class="food-index">06 / 06</span></div></div>
+</div></section>
+<section class="budget section-pad" id="budget"><div class="container budget-layout"><div class="budget-title reveal"><span class="kicker">Попередній прорахунок</span><h2>ПЛАНУЄШ<br><span class="accent">ВІДКРИТТЯ?</span></h2><p>Вибери площу — побачиш орієнтовну вартість роботи команди та окремо інвестиції у відкриття. Остаточний бюджет завжди залежить від формату й приміщення.</p></div>
+ <div class="budget-panel reveal"><h3>01 / Обери площу майбутнього закладу</h3><div class="area-options" role="group" aria-label="Площа майбутнього закладу"><button class="area-btn" data-area="0" aria-pressed="true"><strong>до 20 м²</strong><small>Мініформат</small></button><button class="area-btn" data-area="1" aria-pressed="false"><strong>20–40 м²</strong><small>Кафе / фастфуд</small></button><button class="area-btn" data-area="2" aria-pressed="false"><strong>40–60 м²</strong><small>Кафе / кухня</small></button><button class="area-btn" data-area="3" aria-pressed="false"><strong>60–80 м²</strong><small>Більший формат</small></button></div>
+ <div class="prices"><div class="price primary"><label>Вартість послуг команди від</label><strong id="servicePrice">$2 800</strong></div><div class="price"><label>Орієнтовні інвестиції у відкриття</label><strong id="investPrice">$10–18 тис.</strong></div></div>
+ <p class="budget-foot">Це різні суми: витрати на відкриття (ремонт, обладнання, запуск) не входять у вартість послуг команди. Цифри попередні й потребують індивідуального прорахунку.</p><a class="btn btn-orange" href="#contact" id="budgetCta">Порахувати мій проєкт <span class="arr">↗</span></a></div>
+</div></section>
+<section class="contact container" id="contact"><div class="contact-card"><div class="contact-info"><div><span class="kicker">Зробимо перший крок</span><h2>НАСТУПНИЙ<br><span class="accent">ЗАКЛАД —</span><br>ТВІЙ.</h2><p>Розкажи про задум. Почнемо з консультації, попереднього прорахунку та зрозумілого плану дій.</p></div><span class="mono" style="font-size:12px;color:#adadab">ПЕРШИЙ ГІСТЬ / СТУДІЯ ЗАПУСКУ ЗАКЛАДІВ</span></div>
+ <div class="contact-form"><h3>Розповісти про проєкт</h3><form id="leadForm"><label for="leadName">Як до тебе звертатися?</label><input id="leadName" name="name" type="text" required placeholder="Твоє ім’я" autocomplete="name"><label for="leadContact">Телефон або Telegram</label><input id="leadContact" name="contact" type="text" required placeholder="+380... або @username"><label for="leadType">Який заклад плануєш?</label><select id="leadType" name="type"><option value="Ще обираю формат">Ще обираю формат</option><option value="Кав’ярня">Кав’ярня</option><option value="Кафе або ресторан">Кафе або ресторан</option><option value="Фастфуд / стритфуд">Фастфуд / стритфуд</option><option value="Доставка / dark kitchen">Доставка / dark kitchen</option><option value="Перезапуск діючого закладу">Перезапуск діючого закладу</option></select><label for="leadMessage">Коротко про ідею (необов’язково)</label><textarea id="leadMessage" placeholder="Місто, приміщення, площа, ідея..."></textarea><p class="form-note">Демонстраційна форма: після натискання сформує текст заявки, який можна скопіювати. Для справжньої відправки потрібні контакти й підключення форми.</p><button class="btn btn-orange" type="submit" style="width:100%">Сформувати заявку <span class="arr">↗</span></button></form><div id="leadResult" class="form-result" aria-live="polite"><strong>Текст заявки</strong><pre id="leadText"></pre><div class="form-actions"><button type="button" class="copy-btn" id="copyLead">Скопіювати текст</button><span id="copyMessage" style="font-size:12px"></span></div></div></div>
+ </div></section>
+</main>
+<footer class="footer"><div class="container footer-inner"><a class="logo" href="#home" aria-label="На початок"><svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 49" fill="none" aria-hidden="true"><path class="logo-arch" fill="#ff5634" d="M4 45V17C4 7.5 12 1 22 1S40 7.5 40 17v28h-9V17c0-5.2-4-8.6-9-8.6S13 11.8 13 17v28H4Z"/><path class="logo-door" d="M19 43V23c0-3 2.5-5.5 5.5-5.5H30V43H19Z" fill="#171818"/></svg><span class="logo-text"><span>ПЕРШИЙ</span><span>ГІСТЬ</span><small>СТУДІЯ ЗАПУСКУ ЗАКЛАДІВ</small></span></a><div class="foot-links"><a href="#projects">Проєкти</a><a href="#services">Послуги</a><a href="#budget">Бюджет</a><a href="#contact">Контакти</a></div><span>Концепт сайту · 2026</span></div></footer>
+<script>
+(()=>{
+ const toggle=document.getElementById('menuToggle'),menu=document.getElementById('mobileMenu');
+ const closeMenu=()=>{menu.classList.remove('open');document.body.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Відкрити меню')};
+ toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';menu.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Закрити меню':'Відкрити меню')});
+ menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));window.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+ document.querySelectorAll('.service button').forEach(btn=>btn.addEventListener('click',()=>{let was=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.service button').forEach(b=>{b.setAttribute('aria-expanded','false');document.getElementById(b.getAttribute('aria-controls')).classList.remove('open')});if(!was){btn.setAttribute('aria-expanded','true');document.getElementById(btn.getAttribute('aria-controls')).classList.add('open')}}));
+ const journeyData=[['assets/hero.webp','Кожен запуск починається з чіткої ідеї','Приклад готового ресторану'],['assets/kitchen_new.webp','Обладнання, планування та підготовка простору','Фото кухні під час облаштування'],['assets/kitchen_work.webp','Меню та робочі процеси налаштовуються до відкриття','Робоча професійна кухня'],['assets/redcat.webp','Від дверей до повноцінної роботи з командою','Відкритий заклад із командою']];
+ const jImage=document.getElementById('journeyImage'),jTitle=document.getElementById('journeyTitle'),jIndex=document.getElementById('journeyIndex');
+ document.querySelectorAll('.journey-step').forEach(btn=>btn.addEventListener('click',()=>{const n=+btn.dataset.step;document.querySelectorAll('.journey-step').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false')});btn.classList.add('active');btn.setAttribute('aria-pressed','true');jImage.classList.add('fade');const change=()=>{jImage.src=journeyData[n][0];jImage.alt=journeyData[n][2];jTitle.textContent=journeyData[n][1];jIndex.textContent=String(n+1).padStart(2,'0')+' / 04';jImage.classList.remove('fade')};setTimeout(change,110)}));
+ const food=document.getElementById('foodTrack');document.getElementById('foodNext').addEventListener('click',()=>food.scrollBy({left:Math.max(food.clientWidth*.64,250),behavior:'smooth'}));document.getElementById('foodPrev').addEventListener('click',()=>food.scrollBy({left:-Math.max(food.clientWidth*.64,250),behavior:'smooth'}));
+ const fees=['$2 800','$3 300','$3 600','$4 800'],invest=['$10–18 тис.','$15–25 тис.','$20–40 тис.','$35–65 тис.'];document.querySelectorAll('.area-btn').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.area-btn').forEach(b=>b.setAttribute('aria-pressed','false'));btn.setAttribute('aria-pressed','true');let id=+btn.dataset.area;document.getElementById('servicePrice').textContent=fees[id];document.getElementById('investPrice').textContent=invest[id]}));
+ const form=document.getElementById('leadForm'),result=document.getElementById('leadResult'),leadText=document.getElementById('leadText');form.addEventListener('submit',e=>{e.preventDefault();let data=new FormData(form);leadText.textContent=['Заявка зі сайту «Перший Гість»','Ім’я: '+data.get('name'),'Контакт: '+data.get('contact'),'Формат: '+data.get('type'),'Ідея: '+(document.getElementById('leadMessage').value.trim()||'Не вказано')].join('\n');result.classList.add('show');result.scrollIntoView({behavior:'smooth',block:'nearest'})});
+ document.getElementById('copyLead').addEventListener('click',async()=>{let msg=document.getElementById('copyMessage');try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(leadText.textContent)}else{const ta=document.createElement('textarea');ta.value=leadText.textContent;document.body.append(ta);ta.select();if(!document.execCommand('copy'))throw Error('copy not supported');ta.remove()}msg.textContent='Скопійовано'}catch(e){msg.textContent='Виділи текст заявки та скопіюй вручну'}});
+ if('IntersectionObserver' in window){const obs=new IntersectionObserver(items=>{items.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}})},{threshold:.06,rootMargin:'0px 0px 60px 0px'});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+})();
+</script>
+</body>
+</html>
