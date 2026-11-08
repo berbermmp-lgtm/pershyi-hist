@@ -262,6 +262,7 @@
 /* логотип у шапці: два рядки, без злипання */
 .site-header .logo-text span,.footer .logo-text span{display:block!important;letter-spacing:.014em!important}
 .site-header .logo-text{letter-spacing:.014em!important}
+
 </style>
 </head>
 <body class="is-loading">
@@ -434,7 +435,7 @@
   }, 90);
 
   var start = performance.now();
-  var MIN_SHOW = load.classList.contains('fast') ? 1900 : 2700;   /* скільки висить екран завантаження */
+  var MIN_SHOW = load.classList.contains('fast') ? 2400 : 3400;   /* скільки висить екран завантаження */
   var done = false;
   function finish(){
     if (done) return;
@@ -453,6 +454,31 @@
   /* страховка */
   setTimeout(finish, 8000);
   load.addEventListener('click', finish);
+})();
+</script>
+
+<script>
+(function(){
+  function alignHero(){
+    var logo = document.querySelector('.site-header .logo');
+    var hero = document.querySelector('.hero');
+    if (!logo || !hero) return;
+    var targets = hero.querySelectorAll('h1,h2,p,.kicker,.eyebrow,.hero-topline,.hero-intro,.hero-ctas');
+    for (var i=0;i<targets.length;i++) targets[i].style.marginLeft = '';
+    var logoL = logo.getBoundingClientRect().left;
+    var h1 = hero.querySelector('h1');
+    if (!h1) return;
+    var delta = Math.round(logoL - h1.getBoundingClientRect().left);
+    if (Math.abs(delta) < 1) return;
+    for (var j=0;j<targets.length;j++) targets[j].style.marginLeft = delta + 'px';
+  }
+  var t;
+  function run(){ clearTimeout(t); t = setTimeout(alignHero, 60); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+  window.addEventListener('load', run);
+  window.addEventListener('resize', run);
+  setTimeout(alignHero, 1500);
 })();
 </script>
 </body>
