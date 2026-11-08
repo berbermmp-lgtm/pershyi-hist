@@ -263,6 +263,10 @@
 .site-header .logo-text span,.footer .logo-text span{display:block!important;letter-spacing:.014em!important}
 .site-header .logo-text{letter-spacing:.014em!important}
 
+
+/* «Й» не залазить у рядок вище: вільне міжряддя в блоці контактів */
+.contact-info h2.h2-stack,.contact h2.h2-stack,.contact-card h2.h2-stack{line-height:1.1!important}
+@media(max-width:720px){.contact-info h2.h2-stack,.contact h2.h2-stack,.contact-card h2.h2-stack{line-height:1.22!important}}
 </style>
 </head>
 <body class="is-loading">
@@ -408,7 +412,7 @@
  <div class="prices"><div class="price primary"><label>Вартість послуг команди від</label><strong id="servicePrice">$2 800</strong></div><div class="price"><label>Орієнтовні інвестиції у відкриття</label><strong id="investPrice">$10–18 тис.</strong></div></div>
  <p class="budget-foot">Це різні суми: витрати на відкриття (ремонт, обладнання, запуск) не входять у вартість послуг команди. Цифри попередні й потребують індивідуального прорахунку.</p><a class="btn btn-orange" href="#contact" id="budgetCta">Порахувати мій проєкт <span class="arr">↗</span></a></div>
 </div></section>
-<section class="contact container" id="contact"><div class="contact-card"><div class="contact-info"><div><span class="kicker">Зробимо перший крок</span><h2>НАСТУПНИЙ<br><span class="accent">ЗАКЛАД —</span><br>ТВІЙ.</h2><p>Розкажи про задум. Почнемо з консультації, попереднього прорахунку та зрозумілого плану дій.</p></div><span class="mono" style="font-size:12px;color:#adadab">ПЕРШИЙ ГІСТЬ / СТУДІЯ ЗАПУСКУ ЗАКЛАДІВ</span></div>
+<section class="contact container" id="contact"><div class="contact-card"><div class="contact-info"><div><span class="kicker">Зробимо перший крок</span><h2 class="h2-stack">НАСТУПНИЙ<br><span class="accent">ЗАКЛАД —</span><br>ТВІЙ.</h2><p>Розкажи про задум. Почнемо з консультації, попереднього прорахунку та зрозумілого плану дій.</p></div><span class="mono" style="font-size:12px;color:#adadab">ПЕРШИЙ ГІСТЬ / СТУДІЯ ЗАПУСКУ ЗАКЛАДІВ</span></div>
  <div class="contact-form"><h3>Розповісти про проєкт</h3><form id="leadForm"><label for="leadName">Як до тебе звертатися?</label><input id="leadName" name="name" type="text" required placeholder="Твоє ім’я" autocomplete="name"><label for="leadContact">Телефон або Telegram</label><input id="leadContact" name="contact" type="text" required placeholder="+380... або @username"><label for="leadType">Який заклад плануєш?</label><select id="leadType" name="type"><option value="Ще обираю формат">Ще обираю формат</option><option value="Кав’ярня">Кав’ярня</option><option value="Кафе або ресторан">Кафе або ресторан</option><option value="Фастфуд / стритфуд">Фастфуд / стритфуд</option><option value="Доставка / dark kitchen">Доставка / dark kitchen</option><option value="Перезапуск діючого закладу">Перезапуск діючого закладу</option></select><label for="leadMessage">Коротко про ідею (необов’язково)</label><textarea id="leadMessage" placeholder="Місто, приміщення, площа, ідея..."></textarea><p class="form-note">Демонстраційна форма: після натискання сформує текст заявки, який можна скопіювати. Для справжньої відправки потрібні контакти й підключення форми.</p><button class="btn btn-orange" type="submit" style="width:100%">Сформувати заявку <span class="arr">↗</span></button></form><div id="leadResult" class="form-result" aria-live="polite"><strong>Текст заявки</strong><pre id="leadText"></pre><div class="form-actions"><button type="button" class="copy-btn" id="copyLead">Скопіювати текст</button><span id="copyMessage" style="font-size:12px"></span></div></div></div>
  </div></section>
 </main>
