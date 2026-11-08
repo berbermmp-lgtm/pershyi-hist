@@ -251,9 +251,12 @@
 @keyframes lgRise{0%{opacity:0;transform:translateY(90%)}100%{opacity:1;transform:none}}
 @keyframes lgFade{0%{opacity:0}100%{opacity:.6}}
 
-@media(prefers-reduced-motion:reduce){
-  .logo-arch,.logo-door,.logo-handle,.logo-text span,.logo-text small{animation:none!important}
-}
+/* при вимкнених анімаціях у системі показуємо коротшу версію (див. JS) */
+.pg-load.fast .pg-arch-line{animation-duration:.45s}
+.pg-load.fast .pg-arch{animation-duration:.32s;animation-delay:.25s}
+.pg-load.fast .pg-door{animation-duration:.7s;animation-delay:.45s}
+.pg-load.fast .pg-l span{animation-duration:.32s;animation-delay:calc(.3s + var(--d))}
+.pg-load.fast .pg-word i{animation-delay:.9s}
 </style>
 </head>
 <body>
@@ -405,12 +408,8 @@
   document.documentElement.setAttribute('data-loader', 'v2');
   if (!load) return;
   if (reduced){
-    /* без руху, але екран завантаження все одно показуємо */
     document.documentElement.setAttribute('data-motion', 'reduced');
-    load.classList.add('static');
-    setTimeout(function(){ load.classList.add('is-done');
-      document.querySelector('.logo').classList.add('logo-intro'); }, 700);
-    return;
+    load.classList.add('fast');   /* коротша, але все одно анімована версія */
   }
 
   /* розбиття слів у прелоадері на літери */
@@ -433,7 +432,8 @@
   function finish(){
     clearInterval(tick);
     bar.style.width = '100%';
-    var wait = Math.max(0, 1500 - (Date.now() - start));
+    var hold = load.classList.contains('fast') ? 900 : 1500;
+    var wait = Math.max(0, hold - (Date.now() - start));
     setTimeout(function(){
       load.classList.add('is-done');
       document.querySelector('.logo').classList.add('logo-intro');
