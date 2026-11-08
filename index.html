@@ -430,28 +430,24 @@
   }, 90);
 
   var start = performance.now();
-  var MIN_SHOW = load.classList.contains('fast') ? 1700 : 2400;   /* скільки секунд екран гарантовано висить */
+  var MIN_SHOW = load.classList.contains('fast') ? 1900 : 2700;   /* скільки висить екран завантаження */
   var done = false;
   function finish(){
     if (done) return;
     done = true;
     clearInterval(tick);
     bar.style.width = '100%';
-    var elapsed = performance.now() - start;
-    var wait = Math.max(0, MIN_SHOW - elapsed) + 260;             /* + час, щоб смуга дійшла до 100% */
     setTimeout(function(){
       load.classList.add('is-done');
       document.body.classList.remove('is-loading');
       document.querySelector('.logo').classList.add('logo-intro');
       setTimeout(function(){ load.remove(); }, 700);
-    }, wait);
+    }, 240);
   }
-  /* сайт не має «прослизати» повз анімацію: чекаємо і load, і мінімальний час */
-  window.addEventListener('load', finish);
+  /* фіксований час показу — не залежить від швидкості мережі */
   setTimeout(finish, MIN_SHOW);
-  /* страховка: не тримати довше 6 с */
-  setTimeout(finish, 6000);
-  /* можна перервати кліком */
+  /* страховка */
+  setTimeout(finish, 8000);
   load.addEventListener('click', finish);
 })();
 </script>
