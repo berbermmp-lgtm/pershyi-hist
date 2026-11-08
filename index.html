@@ -283,6 +283,55 @@
   <div class="pg-bar" id="pgBar"><i></i></div>
  </div>
 </div>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var load = document.getElementById('pgLoad');
+  document.documentElement.setAttribute('data-loader', 'v2');
+  if (!load) return;
+  if (reduced){
+    document.documentElement.setAttribute('data-motion', 'reduced');
+    load.classList.add('fast');   /* коротша, але все одно анімована версія */
+  }
+
+  /* розбиття слів у прелоадері на літери */
+  load.querySelectorAll('[data-split]').forEach(function(el){
+    var t = el.textContent, out = '';
+    for (var i = 0; i < t.length; i++) out += '<span style="--d:' + (i*0.045).toFixed(3) + 's">' + t[i] + '</span>';
+    el.innerHTML = out;
+  });
+
+  var bar = document.getElementById('pgBar').firstElementChild;
+  load.classList.add('run');
+
+  /* фальшивий, але чесний прогрес: до 90% поки вантажиться, 100% на load */
+  var p = 0, tick = setInterval(function(){
+    p = Math.min(90, p + Math.random()*13 + 6);
+    bar.style.width = p + '%';
+  }, 90);
+
+  var start = performance.now();
+  var MIN_SHOW = load.classList.contains('fast') ? 1700 : 2300;   /* скільки висить екран завантаження */
+  var done = false;
+  function finish(){
+    if (done) return;
+    done = true;
+    clearInterval(tick);
+    bar.style.width = '100%';
+    setTimeout(function(){
+      load.classList.add('is-done');
+      document.body.classList.remove('is-loading');
+      document.querySelector('.logo').classList.add('logo-intro');
+      setTimeout(function(){ load.remove(); }, 700);
+    }, 240);
+  }
+  /* фіксований час показу — не залежить від швидкості мережі */
+  setTimeout(finish, Math.max(MIN_SHOW - performance.now(), 1500));
+  /* страховка */
+  setTimeout(finish, 8000);
+  load.addEventListener('click', finish);
+})();
+</script>
 
 <header class="site-header">
  <div class="container head-inner">
@@ -407,55 +456,7 @@
 })();
 </script>
 
-<script>
-(function(){
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var load = document.getElementById('pgLoad');
-  document.documentElement.setAttribute('data-loader', 'v2');
-  if (!load) return;
-  if (reduced){
-    document.documentElement.setAttribute('data-motion', 'reduced');
-    load.classList.add('fast');   /* коротша, але все одно анімована версія */
-  }
 
-  /* розбиття слів у прелоадері на літери */
-  load.querySelectorAll('[data-split]').forEach(function(el){
-    var t = el.textContent, out = '';
-    for (var i = 0; i < t.length; i++) out += '<span style="--d:' + (i*0.045).toFixed(3) + 's">' + t[i] + '</span>';
-    el.innerHTML = out;
-  });
-
-  var bar = document.getElementById('pgBar').firstElementChild;
-  load.classList.add('run');
-
-  /* фальшивий, але чесний прогрес: до 90% поки вантажиться, 100% на load */
-  var p = 0, tick = setInterval(function(){
-    p = Math.min(90, p + Math.random()*13 + 6);
-    bar.style.width = p + '%';
-  }, 90);
-
-  var start = performance.now();
-  var MIN_SHOW = load.classList.contains('fast') ? 1700 : 2300;   /* скільки висить екран завантаження */
-  var done = false;
-  function finish(){
-    if (done) return;
-    done = true;
-    clearInterval(tick);
-    bar.style.width = '100%';
-    setTimeout(function(){
-      load.classList.add('is-done');
-      document.body.classList.remove('is-loading');
-      document.querySelector('.logo').classList.add('logo-intro');
-      setTimeout(function(){ load.remove(); }, 700);
-    }, 240);
-  }
-  /* фіксований час показу — не залежить від швидкості мережі */
-  setTimeout(finish, MIN_SHOW);
-  /* страховка */
-  setTimeout(finish, 8000);
-  load.addEventListener('click', finish);
-})();
-</script>
 
 <script>
 (function(){
