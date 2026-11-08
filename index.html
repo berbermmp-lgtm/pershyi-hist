@@ -198,9 +198,77 @@
  .founder-copy h2{font-size:clamp(42px,10.6vw,53px)}
 }
 
+
+/* ═══ прелоадер: анімація логотипа при відкритті сайту ═══ */
+.pg-load{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+  background:#111110;transition:opacity .55s ease,visibility .55s}
+.pg-load.is-done{opacity:0;visibility:hidden;pointer-events:none}
+.pg-inner{display:flex;flex-direction:column;align-items:center;gap:20px;transform:translateY(-2vh)}
+.pg-mark{width:84px;height:auto;overflow:visible}
+.pg-arch{opacity:0;transform:translateY(12px) scale(.94);transform-origin:50% 100%}
+.pg-arch-line{fill:none;stroke:#ff5634;stroke-width:4;stroke-linecap:round;stroke-dasharray:150;stroke-dashoffset:150}
+.pg-door{transform-origin:19px 43px;transform:perspective(320px) rotateY(0)}
+.pg-word{display:flex;flex-direction:column;align-items:center;line-height:.9;font-weight:900;text-transform:uppercase}
+.pg-word .pg-l{display:block;overflow:hidden;padding:0 .06em}
+.pg-word .pg-l span{display:inline-block;transform:translateY(112%);opacity:0}
+.pg-word b{font-size:26px;font-weight:900;color:#F4F1EA;letter-spacing:.012em}
+.pg-word strong{font-size:64px;font-weight:900;color:#ff5634;letter-spacing:.006em;margin-top:2px}
+.pg-word i{font-style:normal;display:inline-block;transform:scale(0);transform-origin:20% 80%}
+.pg-bar{width:132px;height:2px;background:#ffffff1f;overflow:hidden;margin-top:6px}
+.pg-bar i{display:block;height:100%;width:0;background:#ff5634;transition:width .3s ease}
+
+/* прогін анімації (клас ставиться скриптом) */
+.pg-load.run .pg-arch-line{animation:pgDraw .8s cubic-bezier(.65,.02,.28,1) forwards}
+.pg-load.run .pg-arch{animation:pgSettle .55s cubic-bezier(.2,.8,.25,1) .45s forwards}
+.pg-load.run .pg-door{animation:pgSwing 1.3s cubic-bezier(.3,.9,.2,1) .85s both}
+.pg-load.run .pg-l span{animation:pgRise .55s cubic-bezier(.22,.9,.24,1) forwards;animation-delay:calc(.55s + var(--d))}
+.pg-load.run .pg-word i{animation:pgPop .45s cubic-bezier(.2,1.6,.4,1) 1.45s forwards}
+@keyframes pgDraw{to{stroke-dashoffset:0}}
+@keyframes pgSettle{to{opacity:1;transform:none}}
+@keyframes pgSwing{0%{transform:perspective(320px) rotateY(0)}35%{transform:perspective(320px) rotateY(-68deg)}
+  70%{transform:perspective(320px) rotateY(-16deg)}100%{transform:perspective(320px) rotateY(-24deg)}}
+@keyframes pgRise{to{transform:none;opacity:1}}
+@keyframes pgPop{to{transform:scale(1)}}
+
+/* ═══ поява логотипа в шапці після прелоадера ═══ */
+.logo-arch,.logo-door,.logo-handle,.logo-text span,.logo-text small{will-change:transform,opacity}
+.logo-intro .logo-arch{animation:lgArch .6s cubic-bezier(.2,.9,.25,1) both}
+.logo-intro .logo-door{animation:lgDoor .9s cubic-bezier(.3,.9,.2,1) .18s both}
+.logo-intro .logo-handle{animation:lgHandle .5s ease .5s both}
+.logo-intro .logo-text span{display:inline-block;animation:lgRise .5s cubic-bezier(.22,.9,.24,1) both}
+.logo-intro .logo-text span:nth-of-type(2){animation-delay:.09s}
+.logo-intro .logo-text small{animation:lgFade .6s ease .3s both}
+@keyframes lgArch{0%{opacity:0;transform:translateY(3px) scale(.86)}100%{opacity:1;transform:none}}
+@keyframes lgDoor{0%{transform:perspective(200px) rotateY(-70deg)}100%{transform:perspective(200px) rotateY(0)}}
+@keyframes lgHandle{0%{opacity:0}100%{opacity:1}}
+@keyframes lgRise{0%{opacity:0;transform:translateY(90%)}100%{opacity:1;transform:none}}
+@keyframes lgFade{0%{opacity:0}100%{opacity:.6}}
+
+@media(prefers-reduced-motion:reduce){
+  .pg-load{display:none}
+  .logo-arch,.logo-door,.logo-handle,.logo-text span,.logo-text small{animation:none!important}
+}
 </style>
 </head>
 <body>
+<div class="pg-load" id="pgLoad" aria-hidden="true">
+ <div class="pg-inner">
+  <svg class="pg-mark" viewBox="0 0 46 49" fill="none">
+   <path class="pg-arch" fill="#ff5634" d="M4 45V17C4 7.5 12 1 22 1S40 7.5 40 17v28h-9V17c0-5.2-4-8.6-9-8.6S13 11.8 13 17v28H4Z"/>
+   <path class="pg-arch-line" d="M4 45V17C4 7.5 12 1 22 1S40 7.5 40 17v28h-9V17c0-5.2-4-8.6-9-8.6S13 11.8 13 17v28H4Z"/>
+   <g class="pg-door">
+    <path d="M19 43V23c0-3 2.5-5.5 5.5-5.5H30V43H19Z" fill="#B93A1F"/>
+    <path d="M20.5 25h8" stroke="#FFF1E6" stroke-width="2" stroke-linecap="round"/>
+   </g>
+  </svg>
+  <div class="pg-word">
+   <span class="pg-l"><b data-split>ПЕРШИЙ</b></span>
+   <span class="pg-l"><strong data-split>ГІСТЬ</strong><i>.</i></span>
+  </div>
+  <div class="pg-bar" id="pgBar"><i></i></div>
+ </div>
+</div>
+
 <header class="site-header">
  <div class="container head-inner">
   <a href="#home" class="logo" aria-label="Перший Гість — головна">
@@ -321,6 +389,47 @@
   if (document.readyState !== 'loading') fix(); else document.addEventListener('DOMContentLoaded', fix);
   window.addEventListener('load', fix);
   setTimeout(fix, 1200);
+})();
+</script>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var load = document.getElementById('pgLoad');
+  if (!load) return;
+  if (reduced){ load.remove(); document.querySelector('.logo').classList.add('logo-intro'); return; }
+
+  /* розбиття слів у прелоадері на літери */
+  load.querySelectorAll('[data-split]').forEach(function(el){
+    var t = el.textContent, out = '';
+    for (var i = 0; i < t.length; i++) out += '<span style="--d:' + (i*0.045).toFixed(3) + 's">' + t[i] + '</span>';
+    el.innerHTML = out;
+  });
+
+  var bar = document.getElementById('pgBar').firstElementChild;
+  load.classList.add('run');
+
+  /* фальшивий, але чесний прогрес: до 90% поки вантажиться, 100% на load */
+  var p = 0, tick = setInterval(function(){
+    p = Math.min(90, p + Math.random()*13 + 6);
+    bar.style.width = p + '%';
+  }, 90);
+
+  var start = Date.now();
+  function finish(){
+    clearInterval(tick);
+    bar.style.width = '100%';
+    var wait = Math.max(0, 1500 - (Date.now() - start));
+    setTimeout(function(){
+      load.classList.add('is-done');
+      document.querySelector('.logo').classList.add('logo-intro');
+      setTimeout(function(){ load.remove(); }, 700);
+    }, wait);
+  }
+  if (document.readyState === 'complete') finish();
+  else window.addEventListener('load', finish);
+  /* страховка: не тримати довше 4.5 с */
+  setTimeout(function(){ if (document.getElementById('pgLoad')) finish(); }, 4500);
 })();
 </script>
 </body>
