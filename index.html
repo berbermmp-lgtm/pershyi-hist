@@ -204,18 +204,25 @@
   background:#111110;transition:opacity .55s ease,visibility .55s}
 .pg-load.is-done{opacity:0;visibility:hidden;pointer-events:none}
 .pg-inner{display:flex;flex-direction:column;align-items:center;gap:20px;transform:translateY(-2vh)}
-.pg-mark{width:84px;height:auto;overflow:visible}
+.pg-mark{width:96px;height:auto;overflow:visible}
 .pg-arch{opacity:0;transform:translateY(12px) scale(.94);transform-origin:50% 100%}
 .pg-arch-line{fill:none;stroke:#ff5634;stroke-width:4;stroke-linecap:round;stroke-dasharray:150;stroke-dashoffset:150}
 .pg-door{transform-origin:19px 43px;transform:perspective(320px) rotateY(0)}
 .pg-word{display:flex;flex-direction:column;align-items:center;line-height:.9;font-weight:900;text-transform:uppercase}
 .pg-word .pg-l{display:block;overflow:hidden;padding:0 .06em}
 .pg-word .pg-l span{display:inline-block;transform:translateY(112%);opacity:0}
-.pg-word b{font-size:26px;font-weight:900;color:#F4F1EA;letter-spacing:.012em}
-.pg-word strong{font-size:64px;font-weight:900;color:#ff5634;letter-spacing:.006em;margin-top:2px}
+.pg-word b{font-size:29px;font-weight:900;color:#F4F1EA;letter-spacing:.012em}
+.pg-word strong{font-size:72px;font-weight:900;color:#ff5634;letter-spacing:.006em;margin-top:2px}
 .pg-word i{font-style:normal;display:inline-block;transform:scale(0);transform-origin:20% 80%}
 .pg-bar{width:132px;height:2px;background:#ffffff1f;overflow:hidden;margin-top:6px}
 .pg-bar i{display:block;height:100%;width:0;background:#ff5634;transition:width .3s ease}
+
+/* статичний варіант (reduced motion) */
+.pg-load.static .pg-arch{opacity:1;transform:none}
+.pg-load.static .pg-arch-line{display:none}
+.pg-load.static .pg-word .pg-l span{transform:none;opacity:1}
+.pg-load.static .pg-word i{transform:scale(1)}
+.pg-load.static .pg-bar i{width:100%}
 
 /* прогін анімації (клас ставиться скриптом) */
 .pg-load.run .pg-arch-line{animation:pgDraw .8s cubic-bezier(.65,.02,.28,1) forwards}
@@ -245,7 +252,6 @@
 @keyframes lgFade{0%{opacity:0}100%{opacity:.6}}
 
 @media(prefers-reduced-motion:reduce){
-  .pg-load{display:none}
   .logo-arch,.logo-door,.logo-handle,.logo-text span,.logo-text small{animation:none!important}
 }
 </style>
@@ -396,8 +402,16 @@
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var load = document.getElementById('pgLoad');
+  document.documentElement.setAttribute('data-loader', 'v2');
   if (!load) return;
-  if (reduced){ load.remove(); document.querySelector('.logo').classList.add('logo-intro'); return; }
+  if (reduced){
+    /* без руху, але екран завантаження все одно показуємо */
+    document.documentElement.setAttribute('data-motion', 'reduced');
+    load.classList.add('static');
+    setTimeout(function(){ load.classList.add('is-done');
+      document.querySelector('.logo').classList.add('logo-intro'); }, 700);
+    return;
+  }
 
   /* розбиття слів у прелоадері на літери */
   load.querySelectorAll('[data-split]').forEach(function(el){
