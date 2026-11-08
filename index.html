@@ -200,6 +200,7 @@
 
 
 /* ═══ прелоадер: анімація логотипа при відкритті сайту ═══ */
+.is-loading{overflow:hidden}
 .pg-load{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
   background:#111110;transition:opacity .55s ease,visibility .55s}
 .pg-load.is-done{opacity:0;visibility:hidden;pointer-events:none}
@@ -259,7 +260,7 @@
 .pg-load.fast .pg-word i{animation-delay:.9s}
 </style>
 </head>
-<body>
+<body class="is-loading">
 <div class="pg-load" id="pgLoad" aria-hidden="true">
  <div class="pg-inner">
   <svg class="pg-mark" viewBox="0 0 46 49" fill="none">
@@ -428,22 +429,30 @@
     bar.style.width = p + '%';
   }, 90);
 
-  var start = Date.now();
+  var start = performance.now();
+  var MIN_SHOW = load.classList.contains('fast') ? 1700 : 2400;   /* скільки секунд екран гарантовано висить */
+  var done = false;
   function finish(){
+    if (done) return;
+    done = true;
     clearInterval(tick);
     bar.style.width = '100%';
-    var hold = load.classList.contains('fast') ? 900 : 1500;
-    var wait = Math.max(0, hold - (Date.now() - start));
+    var elapsed = performance.now() - start;
+    var wait = Math.max(0, MIN_SHOW - elapsed) + 260;             /* + час, щоб смуга дійшла до 100% */
     setTimeout(function(){
       load.classList.add('is-done');
+      document.body.classList.remove('is-loading');
       document.querySelector('.logo').classList.add('logo-intro');
       setTimeout(function(){ load.remove(); }, 700);
     }, wait);
   }
-  if (document.readyState === 'complete') finish();
-  else window.addEventListener('load', finish);
-  /* страховка: не тримати довше 4.5 с */
-  setTimeout(function(){ if (document.getElementById('pgLoad')) finish(); }, 4500);
+  /* сайт не має «прослизати» повз анімацію: чекаємо і load, і мінімальний час */
+  window.addEventListener('load', finish);
+  setTimeout(finish, MIN_SHOW);
+  /* страховка: не тримати довше 6 с */
+  setTimeout(finish, 6000);
+  /* можна перервати кліком */
+  load.addEventListener('click', finish);
 })();
 </script>
 </body>
